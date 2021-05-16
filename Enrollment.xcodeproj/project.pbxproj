@@ -16,7 +16,8 @@
 		AFCDEF1C265124EB00DAC1E4 /* Flynn in Frameworks */ = {isa = PBXBuildFile; productRef = AFCDEF1B265124EB00DAC1E4 /* Flynn */; };
 		AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
 		AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
-		AFCDEF262651327E00DAC1E4 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF252651327E00DAC1E4 /* UserInfoInputView.swift */; };
+		AFCDEF2A2651399A00DAC1E4 /* PersonalDataRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF292651399A00DAC1E4 /* PersonalDataRecordView.swift */; };
+		AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		AFCDEF0A2651248D00DAC1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCDEF0B2651248D00DAC1E4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		AFCDEF21265131FC00DAC1E4 /* Courier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courier.swift; sourceTree = "<group>"; };
-		AFCDEF252651327E00DAC1E4 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
+		AFCDEF292651399A00DAC1E4 /* PersonalDataRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordView.swift; sourceTree = "<group>"; };
+		AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,6 @@
 		AFCDEF022651248D00DAC1E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AFCDEF242651320C00DAC1E4 /* Scenarios */,
 				AFCDEF1D265128E300DAC1E4 /* Stage */,
 				AFCDEF032651248D00DAC1E4 /* Info.plist */,
 			);
@@ -111,7 +112,7 @@
 		AFCDEF1E2651291100DAC1E4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				AFCDEF252651327E00DAC1E4 /* UserInfoInputView.swift */,
+				AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -132,11 +133,13 @@
 			path = Express;
 			sourceTree = "<group>";
 		};
-		AFCDEF242651320C00DAC1E4 /* Scenarios */ = {
+		AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */ = {
 			isa = PBXGroup;
 			children = (
+				AFCDEF292651399A00DAC1E4 /* PersonalDataRecordView.swift */,
+				AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */,
 			);
-			path = Scenarios;
+			path = PersonalDataRecord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,10 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFCDEF262651327E00DAC1E4 /* UserInfoInputView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
+				AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
+				AFCDEF2A2651399A00DAC1E4 /* PersonalDataRecordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
