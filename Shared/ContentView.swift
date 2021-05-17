@@ -11,6 +11,22 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
+//        List(dataSource.indexed(), id: \.1.self) { idx, content in
+//            Button(action: {
+//                switch content {
+//                case "熱門推薦":
+//                    scenario.beSendMessage(message: ["toApp_GetTagAlbums" : "hot"], nil)
+//                case "關注專輯":
+//                    scenario.beSendMessage(message: ["toApp_GetLikeAlbums" : ""], nil)
+//                case "收藏單集":
+//                    scenario.beSendMessage(message: ["toApp_GetLikeTracks" : ""], nil)
+//                    activeLikeTracks = true
+//                default: break
+//                }
+//            }, label: {
+//                Text(content)
+//            })
+//        }
     }
 }
 
