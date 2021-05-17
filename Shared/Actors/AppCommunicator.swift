@@ -81,7 +81,13 @@ fileprivate class AppConnector: NSObject,WCSessionDelegate {
         _ session: WCSession,
         didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         sender?.beSession(didReceiveMessage: message, replyHandler: replyHandler)
-        watchStore.dispatch(ReceivedAppMessageAction(message: message))
+    }
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        // for app
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        // for app
     }
 }
 
