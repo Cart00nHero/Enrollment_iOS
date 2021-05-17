@@ -12,6 +12,14 @@
 		39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
 		39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
 		39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */; };
+		39AD1CC6265276AD002DCA0A /* WatchCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */; };
+		39AD1CC7265276AD002DCA0A /* WatchCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */; };
+		39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
+		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
+		39AD1CCD26527772002DCA0A /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCB26527772002DCA0A /* Musician.swift */; };
+		39AD1CCE26527772002DCA0A /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCB26527772002DCA0A /* Musician.swift */; };
+		39AD1CCF26527772002DCA0A /* AppCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCC26527772002DCA0A /* AppCommunicator.swift */; };
+		39AD1CD026527772002DCA0A /* AppCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCC26527772002DCA0A /* AppCommunicator.swift */; };
 		AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */; };
@@ -28,6 +36,10 @@
 		39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
 		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordView.swift; sourceTree = "<group>"; };
+		39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCommunicator.swift; sourceTree = "<group>"; };
+		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		39AD1CCB26527772002DCA0A /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
+		39AD1CCC26527772002DCA0A /* AppCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommunicator.swift; sourceTree = "<group>"; };
 		AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentApp.swift; sourceTree = "<group>"; };
 		AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +156,10 @@
 		AFCDEF1F265131C600DAC1E4 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				39AD1CCC26527772002DCA0A /* AppCommunicator.swift */,
+				39AD1CCB26527772002DCA0A /* Musician.swift */,
+				39AD1CC8265276DE002DCA0A /* DataConverter.swift */,
+				39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */,
 				AFCDEF20265131FC00DAC1E4 /* Express */,
 			);
 			path = Actors;
@@ -271,10 +287,14 @@
 			files = (
 				39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
+				39AD1CCD26527772002DCA0A /* Musician.swift in Sources */,
+				39AD1CC6265276AD002DCA0A /* WatchCommunicator.swift in Sources */,
 				AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
+				39AD1CCF26527772002DCA0A /* AppCommunicator.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
+				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
 				39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AD1CD026527772002DCA0A /* AppCommunicator.swift in Sources */,
+				39AD1CC7265276AD002DCA0A /* WatchCommunicator.swift in Sources */,
+				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
+				39AD1CCE26527772002DCA0A /* Musician.swift in Sources */,
 				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,
 				AFCDEF0F2651248D00DAC1E4 /* ContentView.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,

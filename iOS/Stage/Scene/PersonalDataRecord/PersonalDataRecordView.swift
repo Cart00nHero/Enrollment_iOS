@@ -9,7 +9,9 @@ import SwiftUI
 
 struct PersonalDataRecordView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("Hello, World!")
+        }
     }
 }
 
