@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct PersonalDataRecordView: View {
+    @State var dataSource = [""]
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            List(dataSource.indexed(), id: \.1.self) { idx, content in
+                Button(action: {
+                }, label: {
+                    Text(content)
+                })
+            }
         }
     }
 }

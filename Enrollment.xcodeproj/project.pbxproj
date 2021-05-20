@@ -12,14 +12,21 @@
 		39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
 		39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
 		39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */; };
-		39AD1CC6265276AD002DCA0A /* WatchCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */; };
-		39AD1CC7265276AD002DCA0A /* WatchCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */; };
 		39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
 		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
-		39AD1CCD26527772002DCA0A /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCB26527772002DCA0A /* Musician.swift */; };
-		39AD1CCE26527772002DCA0A /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCB26527772002DCA0A /* Musician.swift */; };
-		39AD1CCF26527772002DCA0A /* AppCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCC26527772002DCA0A /* AppCommunicator.swift */; };
-		39AD1CD026527772002DCA0A /* AppCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CCC26527772002DCA0A /* AppCommunicator.swift */; };
+		AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
+		AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
+		AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0C26563BDE0028C16B /* PeerHost.swift */; };
+		AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0C26563BDE0028C16B /* PeerHost.swift */; };
+		AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */; };
+		AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */; };
+		AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */; };
+		AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */; };
+		AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */; };
+		AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE1C265668290028C16B /* AdvertiserScenario.swift */; };
+		AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE1C265668290028C16B /* AdvertiserScenario.swift */; };
+		AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE21265670EC0028C16B /* BrowserScenario.swift */; };
+		AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE21265670EC0028C16B /* BrowserScenario.swift */; };
 		AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */; };
@@ -36,10 +43,14 @@
 		39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
 		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordView.swift; sourceTree = "<group>"; };
-		39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchCommunicator.swift; sourceTree = "<group>"; };
 		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
-		39AD1CCB26527772002DCA0A /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
-		39AD1CCC26527772002DCA0A /* AppCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommunicator.swift; sourceTree = "<group>"; };
+		AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconBroadcaster.swift; sourceTree = "<group>"; };
+		AF72CE0C26563BDE0028C16B /* PeerHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerHost.swift; sourceTree = "<group>"; };
+		AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
+		AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerAdvertiser.swift; sourceTree = "<group>"; };
+		AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAdvertiserView.swift; sourceTree = "<group>"; };
+		AF72CE1C265668290028C16B /* AdvertiserScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserScenario.swift; sourceTree = "<group>"; };
+		AF72CE21265670EC0028C16B /* BrowserScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserScenario.swift; sourceTree = "<group>"; };
 		AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentApp.swift; sourceTree = "<group>"; };
 		AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +99,41 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		AF72CDFC26552BCC0028C16B /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */,
+			);
+			path = iBeacon;
+			sourceTree = "<group>";
+		};
+		AF72CE0B26563B840028C16B /* P2P */ = {
+			isa = PBXGroup;
+			children = (
+				AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */,
+				AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */,
+				AF72CE0C26563BDE0028C16B /* PeerHost.swift */,
+			);
+			path = P2P;
+			sourceTree = "<group>";
+		};
+		AF72CE182656678A0028C16B /* Advertiser */ = {
+			isa = PBXGroup;
+			children = (
+				AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */,
+			);
+			path = Advertiser;
+			sourceTree = "<group>";
+		};
+		AF72CE1B265667CD0028C16B /* Scenario */ = {
+			isa = PBXGroup;
+			children = (
+				AF72CE1C265668290028C16B /* AdvertiserScenario.swift */,
+				AF72CE21265670EC0028C16B /* BrowserScenario.swift */,
+			);
+			path = Scenario;
+			sourceTree = "<group>";
+		};
 		AFCDEEF32651248B00DAC1E4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +147,7 @@
 		AFCDEEF82651248B00DAC1E4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AF72CE1B265667CD0028C16B /* Scenario */,
 				39AD1CB926527265002DCA0A /* Props */,
 				AFCDEF1F265131C600DAC1E4 /* Actors */,
 				AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */,
@@ -148,6 +195,7 @@
 		AFCDEF1E2651291100DAC1E4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AF72CE182656678A0028C16B /* Advertiser */,
 				AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */,
 			);
 			path = Scene;
@@ -156,11 +204,10 @@
 		AFCDEF1F265131C600DAC1E4 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
-				39AD1CCC26527772002DCA0A /* AppCommunicator.swift */,
-				39AD1CCB26527772002DCA0A /* Musician.swift */,
-				39AD1CC8265276DE002DCA0A /* DataConverter.swift */,
-				39AD1CC5265276AD002DCA0A /* WatchCommunicator.swift */,
+				AF72CE0B26563B840028C16B /* P2P */,
+				AF72CDFC26552BCC0028C16B /* iBeacon */,
 				AFCDEF20265131FC00DAC1E4 /* Express */,
+				39AD1CC8265276DE002DCA0A /* DataConverter.swift */,
 			);
 			path = Actors;
 			sourceTree = "<group>";
@@ -192,6 +239,7 @@
 				AFCDEEFC2651248D00DAC1E4 /* Sources */,
 				AFCDEEFD2651248D00DAC1E4 /* Frameworks */,
 				AFCDEEFE2651248D00DAC1E4 /* Resources */,
+				AF72CE2626567AF90028C16B /* FlynnLint */,
 			);
 			buildRules = (
 			);
@@ -280,22 +328,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF72CE2626567AF90028C16B /* FlynnLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = FlynnLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFCDEEFC2651248D00DAC1E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */,
 				39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
-				39AD1CCD26527772002DCA0A /* Musician.swift in Sources */,
-				39AD1CC6265276AD002DCA0A /* WatchCommunicator.swift in Sources */,
 				AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
+				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
-				39AD1CCF26527772002DCA0A /* AppCommunicator.swift in Sources */,
+				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
+				AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */,
+				AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */,
+				AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
+				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +376,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39AD1CD026527772002DCA0A /* AppCommunicator.swift in Sources */,
-				39AD1CC7265276AD002DCA0A /* WatchCommunicator.swift in Sources */,
+				AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */,
+				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
+				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
-				39AD1CCE26527772002DCA0A /* Musician.swift in Sources */,
 				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,
+				AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */,
 				AFCDEF0F2651248D00DAC1E4 /* ContentView.swift in Sources */,
+				AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */,
 				39AD1CBE265272BD002DCA0A /* IndexedCollection.swift in Sources */,
