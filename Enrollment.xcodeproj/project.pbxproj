@@ -7,6 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */; };
+		39AD1CBE265272BD002DCA0A /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */; };
+		39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
+		39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
+		39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */; };
+		39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
+		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
+		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
+		AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
+		AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662926577AB4006DE4AB /* BeaconReceiver.swift */; };
+		AF54662B26577AB4006DE4AB /* BeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662926577AB4006DE4AB /* BeaconReceiver.swift */; };
+		AF54662D26577B56006DE4AB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662C26577B56006DE4AB /* Entities.swift */; };
+		AF54662E26577B56006DE4AB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662C26577B56006DE4AB /* Entities.swift */; };
+		AF54663426578F10006DE4AB /* iOSListInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54663326578F10006DE4AB /* iOSListInputView.swift */; };
+		AF54663526578F10006DE4AB /* iOSListInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54663326578F10006DE4AB /* iOSListInputView.swift */; };
+		AF5466382657974A006DE4AB /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AF5466372657974A006DE4AB /* ReSwift */; };
+		AF5466482657AAD5006DE4AB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466452657AAD4006DE4AB /* AppState.swift */; };
+		AF5466492657AAD5006DE4AB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466452657AAD4006DE4AB /* AppState.swift */; };
+		AF54664A2657AAD5006DE4AB /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466472657AAD4006DE4AB /* AppReducer.swift */; };
+		AF54664B2657AAD5006DE4AB /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466472657AAD4006DE4AB /* AppReducer.swift */; };
+		AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54664D2657AFAE006DE4AB /* UIActions.swift */; };
+		AF54664F2657AFAE006DE4AB /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54664D2657AFAE006DE4AB /* UIActions.swift */; };
+		AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */; };
+		AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
+		AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
+		AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0C26563BDE0028C16B /* PeerHost.swift */; };
+		AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0C26563BDE0028C16B /* PeerHost.swift */; };
+		AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */; };
+		AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */; };
+		AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */; };
+		AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */; };
+		AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */; };
+		AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE1C265668290028C16B /* AdvertiserScenario.swift */; };
+		AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE1C265668290028C16B /* AdvertiserScenario.swift */; };
+		AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE21265670EC0028C16B /* BrowserScenario.swift */; };
+		AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE21265670EC0028C16B /* BrowserScenario.swift */; };
+		AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
+		AF72CE31265760C90028C16B /* RoleSelectionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */; };
+		AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */; };
+		AF72CE34265767770028C16B /* StartAppScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE33265767770028C16B /* StartAppScenario.swift */; };
+		AF72CE35265767770028C16B /* StartAppScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE33265767770028C16B /* StartAppScenario.swift */; };
 		AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */; };
@@ -16,10 +57,32 @@
 		AFCDEF1C265124EB00DAC1E4 /* Flynn in Frameworks */ = {isa = PBXBuildFile; productRef = AFCDEF1B265124EB00DAC1E4 /* Flynn */; };
 		AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
 		AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
-		AFCDEF262651327E00DAC1E4 /* UserInfoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF252651327E00DAC1E4 /* UserInfoInputView.swift */; };
+		AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
+		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordView.swift; sourceTree = "<group>"; };
+		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
+		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
+		AF54662C26577B56006DE4AB /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		AF54663326578F10006DE4AB /* iOSListInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSListInputView.swift; sourceTree = "<group>"; };
+		AF5466452657AAD4006DE4AB /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		AF5466472657AAD4006DE4AB /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		AF54664D2657AFAE006DE4AB /* UIActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActions.swift; sourceTree = "<group>"; };
+		AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSListDisplayView.swift; sourceTree = "<group>"; };
+		AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconBroadcaster.swift; sourceTree = "<group>"; };
+		AF72CE0C26563BDE0028C16B /* PeerHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerHost.swift; sourceTree = "<group>"; };
+		AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
+		AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerAdvertiser.swift; sourceTree = "<group>"; };
+		AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAdvertiserView.swift; sourceTree = "<group>"; };
+		AF72CE1C265668290028C16B /* AdvertiserScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserScenario.swift; sourceTree = "<group>"; };
+		AF72CE21265670EC0028C16B /* BrowserScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserScenario.swift; sourceTree = "<group>"; };
+		AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
+		AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionScenario.swift; sourceTree = "<group>"; };
+		AF72CE33265767770028C16B /* StartAppScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppScenario.swift; sourceTree = "<group>"; };
 		AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentApp.swift; sourceTree = "<group>"; };
 		AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,7 +92,7 @@
 		AFCDEF0A2651248D00DAC1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCDEF0B2651248D00DAC1E4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		AFCDEF21265131FC00DAC1E4 /* Courier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courier.swift; sourceTree = "<group>"; };
-		AFCDEF252651327E00DAC1E4 /* UserInfoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoInputView.swift; sourceTree = "<group>"; };
+		AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCDEF1C265124EB00DAC1E4 /* Flynn in Frameworks */,
+				AF5466382657974A006DE4AB /* ReSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +115,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39AD1CB926527265002DCA0A /* Props */ = {
+			isa = PBXGroup;
+			children = (
+				39AD1CBA265272BD002DCA0A /* Extension */,
+				AF54662C26577B56006DE4AB /* Entities.swift */,
+			);
+			path = Props;
+			sourceTree = "<group>";
+		};
+		39AD1CBA265272BD002DCA0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */,
+				39AD1CBC265272BD002DCA0A /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AF54662F26578ECC006DE4AB /* Scenery */ = {
+			isa = PBXGroup;
+			children = (
+				AF54663326578F10006DE4AB /* iOSListInputView.swift */,
+				AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */,
+			);
+			path = Scenery;
+			sourceTree = "<group>";
+		};
+		AF5466432657AAD4006DE4AB /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				AF54664C2657AF97006DE4AB /* Actions */,
+				AF5466442657AAD4006DE4AB /* States */,
+				AF5466462657AAD4006DE4AB /* Reducers */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		AF5466442657AAD4006DE4AB /* States */ = {
+			isa = PBXGroup;
+			children = (
+				AF5466452657AAD4006DE4AB /* AppState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		AF5466462657AAD4006DE4AB /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				AF5466472657AAD4006DE4AB /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		AF54664C2657AF97006DE4AB /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				AF54664D2657AFAE006DE4AB /* UIActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		AF72CDFC26552BCC0028C16B /* iBeacon */ = {
+			isa = PBXGroup;
+			children = (
+				AF54662926577AB4006DE4AB /* BeaconReceiver.swift */,
+				AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */,
+			);
+			path = iBeacon;
+			sourceTree = "<group>";
+		};
+		AF72CE0B26563B840028C16B /* P2P */ = {
+			isa = PBXGroup;
+			children = (
+				AF72CE0E26563BDE0028C16B /* PeerAdvertiser.swift */,
+				AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */,
+				AF72CE0C26563BDE0028C16B /* PeerHost.swift */,
+			);
+			path = P2P;
+			sourceTree = "<group>";
+		};
+		AF72CE1B265667CD0028C16B /* Scenario */ = {
+			isa = PBXGroup;
+			children = (
+				AF72CE1C265668290028C16B /* AdvertiserScenario.swift */,
+				AF72CE21265670EC0028C16B /* BrowserScenario.swift */,
+				AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */,
+				AF72CE33265767770028C16B /* StartAppScenario.swift */,
+			);
+			path = Scenario;
+			sourceTree = "<group>";
+		};
 		AFCDEEF32651248B00DAC1E4 = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +219,12 @@
 		AFCDEEF82651248B00DAC1E4 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AF5466432657AAD4006DE4AB /* Redux */,
+				AF72CE1B265667CD0028C16B /* Scenario */,
+				39AD1CB926527265002DCA0A /* Props */,
 				AFCDEF1F265131C600DAC1E4 /* Actors */,
 				AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */,
+				AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */,
 				AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */,
 				AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */,
 			);
@@ -84,7 +243,6 @@
 		AFCDEF022651248D00DAC1E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AFCDEF242651320C00DAC1E4 /* Scenarios */,
 				AFCDEF1D265128E300DAC1E4 /* Stage */,
 				AFCDEF032651248D00DAC1E4 /* Info.plist */,
 			);
@@ -103,6 +261,7 @@
 		AFCDEF1D265128E300DAC1E4 /* Stage */ = {
 			isa = PBXGroup;
 			children = (
+				AF54662F26578ECC006DE4AB /* Scenery */,
 				AFCDEF1E2651291100DAC1E4 /* Scene */,
 			);
 			path = Stage;
@@ -111,7 +270,9 @@
 		AFCDEF1E2651291100DAC1E4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				AFCDEF252651327E00DAC1E4 /* UserInfoInputView.swift */,
+				AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */,
+				AF5466262657748F006DE4AB /* iOSBrowserView.swift */,
+				AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -119,7 +280,10 @@
 		AFCDEF1F265131C600DAC1E4 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				AF72CE0B26563B840028C16B /* P2P */,
+				AF72CDFC26552BCC0028C16B /* iBeacon */,
 				AFCDEF20265131FC00DAC1E4 /* Express */,
+				39AD1CC8265276DE002DCA0A /* DataConverter.swift */,
 			);
 			path = Actors;
 			sourceTree = "<group>";
@@ -132,11 +296,13 @@
 			path = Express;
 			sourceTree = "<group>";
 		};
-		AFCDEF242651320C00DAC1E4 /* Scenarios */ = {
+		AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */ = {
 			isa = PBXGroup;
 			children = (
+				AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */,
+				39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */,
 			);
-			path = Scenarios;
+			path = PersonalDataRecord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +315,7 @@
 				AFCDEEFC2651248D00DAC1E4 /* Sources */,
 				AFCDEEFD2651248D00DAC1E4 /* Frameworks */,
 				AFCDEEFE2651248D00DAC1E4 /* Resources */,
+				AF72CE2626567AF90028C16B /* FlynnLint */,
 			);
 			buildRules = (
 			);
@@ -157,6 +324,7 @@
 			name = "Enrollment (iOS)";
 			packageProductDependencies = (
 				AFCDEF1B265124EB00DAC1E4 /* Flynn */,
+				AF5466372657974A006DE4AB /* ReSwift */,
 			);
 			productName = "Enrollment (iOS)";
 			productReference = AFCDEF002651248D00DAC1E4 /* Enrollment.app */;
@@ -207,6 +375,7 @@
 			mainGroup = AFCDEEF32651248B00DAC1E4;
 			packageReferences = (
 				AFCDEF1A265124EB00DAC1E4 /* XCRemoteSwiftPackageReference "Flynn" */,
+				AF5466362657974A006DE4AB /* XCRemoteSwiftPackageReference "ReSwift" */,
 			);
 			productRefGroup = AFCDEF012651248D00DAC1E4 /* Products */;
 			projectDirPath = "";
@@ -237,15 +406,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF72CE2626567AF90028C16B /* FlynnLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = FlynnLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFCDEEFC2651248D00DAC1E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFCDEF262651327E00DAC1E4 /* UserInfoInputView.swift in Sources */,
+				AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */,
+				39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */,
+				AF72CE34265767770028C16B /* StartAppScenario.swift in Sources */,
+				AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
+				AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
+				AF54664A2657AAD5006DE4AB /* AppReducer.swift in Sources */,
+				AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */,
+				AF72CE31265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
+				AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */,
+				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
+				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
+				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
+				AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
+				AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */,
+				39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */,
+				AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
+				AF5466482657AAD5006DE4AB /* AppState.swift in Sources */,
+				AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */,
+				AF54662D26577B56006DE4AB /* Entities.swift in Sources */,
+				AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
+				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
+				AF54663426578F10006DE4AB /* iOSListInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,9 +465,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */,
+				AF54663526578F10006DE4AB /* iOSListInputView.swift in Sources */,
+				AF5466492657AAD5006DE4AB /* AppState.swift in Sources */,
+				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
+				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
+				AF54662E26577B56006DE4AB /* Entities.swift in Sources */,
+				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
+				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
+				AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */,
+				AF54664F2657AFAE006DE4AB /* UIActions.swift in Sources */,
+				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,
+				AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */,
 				AFCDEF0F2651248D00DAC1E4 /* ContentView.swift in Sources */,
+				AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */,
+				AF54664B2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
+				AF54662B26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
 				AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */,
+				39AD1CBE265272BD002DCA0A /* IndexedCollection.swift in Sources */,
+				AF72CE35265767770028C16B /* StartAppScenario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +729,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AF5466362657974A006DE4AB /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
 		AFCDEF1A265124EB00DAC1E4 /* XCRemoteSwiftPackageReference "Flynn" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/KittyMac/Flynn.git";
@@ -510,6 +748,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AF5466372657974A006DE4AB /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF5466362657974A006DE4AB /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
+		};
 		AFCDEF1B265124EB00DAC1E4 /* Flynn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AFCDEF1A265124EB00DAC1E4 /* XCRemoteSwiftPackageReference "Flynn" */;
