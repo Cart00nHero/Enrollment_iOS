@@ -11,6 +11,7 @@ fileprivate let scenario = AdvertiserScenario()
 struct iOSAdvertiserView: View {
     
     @State private var dataSource: [ListInputItem] = []
+    @State private var formDatoSource: [ListInputItem] = []
     @State private var buttonTitle: String = "編輯"
     @State private var toggleSwitchOn = false
     
@@ -50,8 +51,10 @@ struct iOSAdvertiserView: View {
                         }
                     }
                 }
+                List(formDatoSource.indexed(), id: \.1.self) { (idx, content) in
+                    iOSListDisplayView(index: idx, item: .constant(content))
+                }
             }.frame(height: UIScreen.main.bounds.height/2.0, alignment: .top)
-            .ignoresSafeArea(.keyboard)
         }.navigationBarHidden(true)
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .onAppear() {
@@ -59,6 +62,11 @@ struct iOSAdvertiserView: View {
                 dataSource = source
             }
             scenario.beSubscribeRedux { newState in
+                if let action =
+                    newState.currentAction as? ReceivedInitationAction {
+                    formDatoSource = action.source
+                    toggleSwitchOn = false
+                }
             }
         }
         .onDisappear() {

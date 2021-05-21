@@ -45,8 +45,7 @@ struct iOSBrowserView: View {
             }, label: {
                 Text(buttonTitle)
             })
-            Spacer().frame(height: 10.0)
-            Divider().frame(height: 2.0)
+            Spacer()
         }.navigationBarHidden(true)
         .onAppear() {
             scenario.beGetDataSource { source in

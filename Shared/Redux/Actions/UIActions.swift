@@ -12,3 +12,6 @@ struct ListTextFieldOnChangeAction: Action {
     let index: Int
     let newValue: String
 }
+struct ReceivedInitationAction: Action {
+    let source: [ListInputItem]
+}

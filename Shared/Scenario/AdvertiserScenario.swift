@@ -12,7 +12,7 @@ import UIKit
 import MultipeerConnectivity
 
 class AdvertiserScenario: Actor {
-    
+    // 訪客
     private var displayName = UIDevice.current.name
     private let serviceType = "visitor-record"
     private var host: PeerHost?
@@ -95,6 +95,27 @@ class AdvertiserScenario: Actor {
         UserDefaults.standard.setValue(json, forKey: "visitor_info")
         beAdvertiser()
     }
+    func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
+        return [
+            ListInputItem(
+                title: "代碼：",
+                placeholder: "請輸入店家代號",
+                keyboardType: .asciiCapable,
+                content: content.code
+            ),
+            ListInputItem(
+                title: "店家名稱：",
+                placeholder: "請輸店家名稱",
+                content: content.name
+            ),
+            ListInputItem(
+                title: "表格網址：",
+                placeholder: "請輸入表格所在網址：",
+                keyboardType: .URL,
+                content: content.cloudForm
+            )
+        ]
+    }
 }
 extension AdvertiserScenario: StoreSubscriber {
     func newState(state: SceneState) {
@@ -131,7 +152,13 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
     private func _beAdvertiser(
         didReceiveInvitationFrom peerID: MCPeerID,
         context: Data?, replyInvitation: @escaping (Bool, MCSession?) -> Void) {
-        print("收到邀請:\(String(describing: context))")
+        if context != nil {
+            let json = String(data: context!, encoding: .utf8)
+            guard let unitInfo: VisitedUnit = json?.toEntity(to: VisitedUnit.self) else { return }
+            print("收到邀請:\(unitInfo.name)")
+            let result = converToFormDatoSources(content: unitInfo)
+            appStore.dispatch(ReceivedInitationAction(source: result))
+        }
     }
 }
 
@@ -139,7 +166,7 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
 // Contents of file after this marker will be overwritten as needed
 
 extension AdvertiserScenario {
-
+    
     @discardableResult
     public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
         unsafeSend { self._beSubscribeRedux(complete) }
@@ -210,5 +237,5 @@ extension AdvertiserScenario {
         unsafeSend { self._beAdvertiser(didReceiveInvitationFrom: peerID, context: context, replyInvitation: replyInvitation) }
         return self
     }
-
+    
 }
