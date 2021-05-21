@@ -30,6 +30,9 @@
 		AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54664D2657AFAE006DE4AB /* UIActions.swift */; };
 		AF54664F2657AFAE006DE4AB /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54664D2657AFAE006DE4AB /* UIActions.swift */; };
 		AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */; };
+		AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF546654265812BE006DE4AB /* iOSBrowserListView.swift */; };
+		AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665626581533006DE4AB /* TextFieldClearButton.swift */; };
+		AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665626581533006DE4AB /* TextFieldClearButton.swift */; };
 		AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
 		AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
 		AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0C26563BDE0028C16B /* PeerHost.swift */; };
@@ -73,6 +76,8 @@
 		AF5466472657AAD4006DE4AB /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		AF54664D2657AFAE006DE4AB /* UIActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActions.swift; sourceTree = "<group>"; };
 		AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSListDisplayView.swift; sourceTree = "<group>"; };
+		AF546654265812BE006DE4AB /* iOSBrowserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserListView.swift; sourceTree = "<group>"; };
+		AF54665626581533006DE4AB /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconBroadcaster.swift; sourceTree = "<group>"; };
 		AF72CE0C26563BDE0028C16B /* PeerHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerHost.swift; sourceTree = "<group>"; };
 		AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
@@ -138,6 +143,8 @@
 			children = (
 				AF54663326578F10006DE4AB /* iOSListInputView.swift */,
 				AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */,
+				AF546654265812BE006DE4AB /* iOSBrowserListView.swift */,
+				AF54665626581533006DE4AB /* TextFieldClearButton.swift */,
 			);
 			path = Scenery;
 			sourceTree = "<group>";
@@ -446,8 +453,10 @@
 				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
 				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
+				AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */,
 				AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */,
 				39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */,
@@ -474,6 +483,7 @@
 				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
 				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
+				AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */,
 				AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */,
 				AF54664F2657AFAE006DE4AB /* UIActions.swift in Sources */,
 				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,

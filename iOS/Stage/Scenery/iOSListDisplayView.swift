@@ -21,7 +21,6 @@ struct iOSListDisplayView: View {
                 Text("Copy")
             }
             Spacer().frame(width: 20, height: 0, alignment: .center)
-
         }
     }
 }

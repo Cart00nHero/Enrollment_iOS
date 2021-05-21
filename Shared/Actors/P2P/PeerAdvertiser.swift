@@ -11,7 +11,10 @@ import MultipeerConnectivity
 
 protocol AdvertiserProtocol {
     @discardableResult
-    func beAdvertiser(didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?) -> Self
+    func beAdvertiser(
+        didReceiveInvitationFrom peerID: MCPeerID,
+        context: Data?,
+        replyInvitation: @escaping (Bool, MCSession?) -> Void) -> Self
 }
 
 fileprivate class RoleOfAdvertiser: NSObject {
@@ -19,7 +22,8 @@ fileprivate class RoleOfAdvertiser: NSObject {
     private var advertiser: MCNearbyServiceAdvertiser!
     var delegate: AdvertiserProtocol?
     
-    func actRoleOfAdvertiser(name: String,type:String) {
+    func actRoleOfAdvertiser(name: String, type:String) {
+        /* The serviceType parameter is a short text string used to describe the app's networking protocol. It should be in the same format as a Bonjour service type: up to 15 characters long and valid characters include ASCII lowercase letters, numbers, and the hyphen. A short name that distinguishes itself from unrelated services is recommended; for example, a text chat app made by ABC company could use the service type "abc-txtchat". */
         advertiser = MCNearbyServiceAdvertiser(peer: MCPeerID(displayName: name), discoveryInfo: nil, serviceType: type)
         advertiser.delegate = self
     }
@@ -34,8 +38,7 @@ fileprivate class RoleOfAdvertiser: NSObject {
 
 extension RoleOfAdvertiser: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
-        delegate?.beAdvertiser(
-            didReceiveInvitationFromPeer: peerID, withContext: context)
+        delegate?.beAdvertiser(didReceiveInvitationFrom: peerID, context: context, replyInvitation: invitationHandler)
     }
     
 }

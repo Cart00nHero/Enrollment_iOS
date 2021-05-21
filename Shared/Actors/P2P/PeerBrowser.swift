@@ -51,6 +51,12 @@ class PeerBrowser: Actor {
         browser.actRoleOfBrowser(name: peerName, type: serviceType)
         browser.delegate = sender
     }
+    private func _beStartBrowsing() {
+        browser.startBrowsingForPeers()
+    }
+    private func _beStopBrowsing() {
+        browser.stopBrowsingForPeers()
+    }
     
     private func _beInvite(
         sender: Actor, peerID: MCPeerID, to session: MCSession,
@@ -70,6 +76,16 @@ class PeerBrowser: Actor {
 
 extension PeerBrowser {
 
+    @discardableResult
+    public func beStartBrowsing() -> Self {
+        unsafeSend(_beStartBrowsing)
+        return self
+    }
+    @discardableResult
+    public func beStopBrowsing() -> Self {
+        unsafeSend(_beStopBrowsing)
+        return self
+    }
     @discardableResult
     public func beInvite(sender: Actor, peerID: MCPeerID, to session: MCSession, context: Data?, timeout: TimeInterval, _ complete: (() -> Void)?) -> Self {
         unsafeSend { self._beInvite(sender: sender, peerID: peerID, to: session, context: context, timeout: timeout, complete) }

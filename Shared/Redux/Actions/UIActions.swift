@@ -10,5 +10,5 @@ import ReSwift
 
 struct ListTextFieldOnChangeAction: Action {
     let index: Int
-    let newText: String
+    let newValue: String
 }

@@ -20,3 +20,8 @@ struct VisitorInfo: Convertable {
     var tel = ""
     var identityNo = ""
 }
+struct VisitedUnit: Convertable {
+    var code = ""
+    var name = ""
+    var cloudForm = ""
+}
