@@ -8,26 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var activeAdvertiserView = false
+    private let scenario = StartAppScenario()
+    @State var activeRoleSelection = false
+    @State var activeAdvertiser = false
+    @State var activeBrowser = false
     var body: some View {
-        VStack {
+        NavigationView {
+            VStack {
+                NavigationLink(
+                    destination: RoleSelectionView(active: $activeRoleSelection),
+                    isActive: $activeRoleSelection) {
+                    Text("")
+                }.hidden()
+                NavigationLink(
+                    destination: iOSAdvertiserView(),
+                    isActive: $activeAdvertiser) {
+                    Text("")
+                }.hidden()
+                NavigationLink(
+                    destination: iOSAdvertiserView(),
+                    isActive: $activeBrowser) {
+                    Text("")
+                }
+            }.onAppear() {
+                scenario.beGetRoleOfUser { role in
+                    switch role {
+                    case "Visitor":
+                        self.activeAdvertiser = true
+                    case "Visited_Unit":
+                        self.activeBrowser = true
+                    default:
+                        self.activeRoleSelection = true
+                    }
+                }
+            }
         }
-//        List(dataSource.indexed(), id: \.1.self) { idx, content in
-//            Button(action: {
-//                switch content {
-//                case "熱門推薦":
-//                    scenario.beSendMessage(message: ["toApp_GetTagAlbums" : "hot"], nil)
-//                case "關注專輯":
-//                    scenario.beSendMessage(message: ["toApp_GetLikeAlbums" : ""], nil)
-//                case "收藏單集":
-//                    scenario.beSendMessage(message: ["toApp_GetLikeTracks" : ""], nil)
-//                    activeLikeTracks = true
-//                default: break
-//                }
-//            }, label: {
-//                Text(content)
-//            })
-//        }
     }
 }
 

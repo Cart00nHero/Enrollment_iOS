@@ -7,18 +7,27 @@
 
 import SwiftUI
 
+fileprivate let scenario = RoleSelectionScenario()
 struct RoleSelectionView: View {
     @Binding var active: Bool
     var body: some View {
         VStack {
-            Button(action: {}, label: {
+            Button(action: {
+                scenario.beActVisitor {
+                    active = false
+                }
+            }, label: {
                 Text("我是訪客")
             })
             Divider().frame(height: 30).hidden()
-            Button(action: {}, label: {
+            Button(action: {
+                scenario.beVisitedUnit {
+                    active = false
+                }
+            }, label: {
                 Text("我是店家")
             })
-        }
+        }.navigationBarHidden(true)
     }
 }
 

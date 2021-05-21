@@ -30,11 +30,19 @@ class AdvertiserScenario: Actor {
     private func _beStopAdvertising() {
         advertiser?.beStopAdvertising()
     }
-    private func _beGetDataSource(_complete:@escaping () -> Void) {
-        
+    private func _beGetDataSource(
+        _ complete:@escaping ([AdvertiserItem]) -> Void) {
+        let source = [
+            AdvertiserItem(title: "姓名：", placeholder: "請輸入您的姓名"),
+            AdvertiserItem(title: "電話：", placeholder: "請輸入您電話"),
+            AdvertiserItem(title: "身分證字號：", placeholder: "請輸入您的身份證字號")
+        ]
+        DispatchQueue.main.async {
+            complete(source)
+        }
     }
 }
-extension AdvertiserScenario: PeerHostProtocol,AdvertiserProtocol {
+extension AdvertiserScenario:PeerHostProtocol,AdvertiserProtocol {
     // MARK: - PeerHostProtocol
     private func _beSession(peer peerID: MCPeerID, didChange state: MCSessionState) {
     }
@@ -75,8 +83,8 @@ extension AdvertiserScenario {
         return self
     }
     @discardableResult
-    public func beGetDataSource(_complete: @escaping () -> Void) -> Self {
-        unsafeSend { self._beGetDataSource(_complete: _complete) }
+    public func beGetDataSource(_ complete: @escaping ([AdvertiserItem]) -> Void) -> Self {
+        unsafeSend { self._beGetDataSource(complete) }
         return self
     }
     @discardableResult
