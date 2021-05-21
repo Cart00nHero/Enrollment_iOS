@@ -8,9 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct AdvertiserItem: Convertable,Hashable {
+struct ListInputItem: Hashable {
     var title = ""
     var placeholder = ""
+    var keyboardType: UIKeyboardType = .default
     var content = ""
-    var currentDate = ""
+}
+
+struct VisitorInfo: Convertable {
+    var name = ""
+    var tel = ""
+    var identityNo = ""
 }

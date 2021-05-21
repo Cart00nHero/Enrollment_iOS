@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct iOSListInputView: View {
-    let indx: Int
-    @Binding var item: AdvertiserItem
+    let index: Int
+    @Binding var item: ListInputItem
     @State private var contentValue = ""
     var body: some View {
         HStack {
             Text(item.title)
-            TextField(item.title, text: $contentValue)
+            TextField(item.placeholder, text: $contentValue).keyboardType(item.keyboardType)
+                .onChange(of: contentValue) { newValue in
+                appStore.dispatch(
+                    ListTextFieldOnChangeAction(index: index, newText: newValue))
+            }
         }.onAppear() {
-            item.content = self.contentValue
+            self.contentValue = item.content
         }
     }
 }
 
 struct iOSListInputView_Previews: PreviewProvider {
     static var previews: some View {
-        iOSListInputView(indx: 0, item: .constant(AdvertiserItem()))
+        iOSListInputView(index: 0, item: .constant(ListInputItem()))
     }
 }
