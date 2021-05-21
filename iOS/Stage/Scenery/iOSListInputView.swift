@@ -14,10 +14,12 @@ struct iOSListInputView: View {
     var body: some View {
         HStack {
             Text(item.title)
-            TextField(item.placeholder, text: $contentValue).keyboardType(item.keyboardType)
+            TextField(item.placeholder, text: $contentValue)
+                .modifier(TextFieldClearButton(text: $contentValue))
+                .keyboardType(item.keyboardType)
                 .onChange(of: contentValue) { newValue in
                 appStore.dispatch(
-                    ListTextFieldOnChangeAction(index: index, newText: newValue))
+                    ListTextFieldOnChangeAction(index: index, newValue: newValue))
             }
         }.onAppear() {
             self.contentValue = item.content

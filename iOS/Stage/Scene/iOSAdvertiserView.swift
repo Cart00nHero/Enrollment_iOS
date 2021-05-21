@@ -10,9 +10,10 @@ import SwiftUI
 fileprivate let scenario = AdvertiserScenario()
 struct iOSAdvertiserView: View {
     
-    @State var dataSource: [ListInputItem] = []
-    @State var buttonTitle: String = "編輯"
-    @State var toggleSwitchOn = false
+    @State private var dataSource: [ListInputItem] = []
+    @State private var formDatoSource: [ListInputItem] = []
+    @State private var buttonTitle: String = "編輯"
+    @State private var toggleSwitchOn = false
     
     var body: some View {
         VStack {
@@ -41,17 +42,19 @@ struct iOSAdvertiserView: View {
                 HStack {
                     Spacer().frame(width: 10.0)
                     Toggle(isOn: $toggleSwitchOn, label: {
-                        Text("領表涕泣")
+                        Text("領表__，要知所云")
                     }).onChange(of: toggleSwitchOn) { isOn in
                         if isOn {
-                            scenario.beStartAdvertising()
+                            scenario.beStart()
                         } else {
-                            scenario.beStopAdvertising()
+                            scenario.beStop()
                         }
                     }
                 }
+                List(formDatoSource.indexed(), id: \.1.self) { (idx, content) in
+                    iOSListDisplayView(index: idx, item: .constant(content))
+                }
             }.frame(height: UIScreen.main.bounds.height/2.0, alignment: .top)
-            .ignoresSafeArea(.keyboard)
         }.navigationBarHidden(true)
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .onAppear() {
@@ -59,11 +62,10 @@ struct iOSAdvertiserView: View {
                 dataSource = source
             }
             scenario.beSubscribeRedux { newState in
-                switch newState.currentAction {
-                case let action as ListTextFieldOnChangeAction:
-                    scenario.beStoreVisitorInfo(
-                        index: action.index, value: action.newText)
-                default: break
+                if let action =
+                    newState.currentAction as? ReceivedInitationAction {
+                    formDatoSource = action.source
+                    toggleSwitchOn = false
                 }
             }
         }

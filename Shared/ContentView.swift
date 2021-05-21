@@ -26,7 +26,7 @@ struct ContentView: View {
                     Text("")
                 }.hidden()
                 NavigationLink(
-                    destination: iOSAdvertiserView(),
+                    destination: iOSBrowserView(),
                     isActive: $activeBrowser) {
                     Text("")
                 }
