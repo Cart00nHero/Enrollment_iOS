@@ -19,7 +19,6 @@ fileprivate class RoleOfAdvertiser: NSObject {
     private var advertiser: MCNearbyServiceAdvertiser!
     var delegate: AdvertiserProtocol?
     
-    
     func actRoleOfAdvertiser(name: String,type:String) {
         advertiser = MCNearbyServiceAdvertiser(peer: MCPeerID(displayName: name), discoveryInfo: nil, serviceType: type)
         advertiser.delegate = self

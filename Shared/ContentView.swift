@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var activeAdvertiserView = false
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+        }
 //        List(dataSource.indexed(), id: \.1.self) { idx, content in
 //            Button(action: {
 //                switch content {

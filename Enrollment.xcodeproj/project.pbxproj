@@ -27,6 +27,10 @@
 		AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE1C265668290028C16B /* AdvertiserScenario.swift */; };
 		AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE21265670EC0028C16B /* BrowserScenario.swift */; };
 		AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE21265670EC0028C16B /* BrowserScenario.swift */; };
+		AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
+		AF72CE2C26575FB80028C16B /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
+		AF72CE31265760C90028C16B /* RoleSelectionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */; };
+		AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */; };
 		AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */; };
@@ -51,6 +55,8 @@
 		AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAdvertiserView.swift; sourceTree = "<group>"; };
 		AF72CE1C265668290028C16B /* AdvertiserScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserScenario.swift; sourceTree = "<group>"; };
 		AF72CE21265670EC0028C16B /* BrowserScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserScenario.swift; sourceTree = "<group>"; };
+		AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
+		AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionScenario.swift; sourceTree = "<group>"; };
 		AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentApp.swift; sourceTree = "<group>"; };
 		AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,19 +123,12 @@
 			path = P2P;
 			sourceTree = "<group>";
 		};
-		AF72CE182656678A0028C16B /* Advertiser */ = {
-			isa = PBXGroup;
-			children = (
-				AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */,
-			);
-			path = Advertiser;
-			sourceTree = "<group>";
-		};
 		AF72CE1B265667CD0028C16B /* Scenario */ = {
 			isa = PBXGroup;
 			children = (
 				AF72CE1C265668290028C16B /* AdvertiserScenario.swift */,
 				AF72CE21265670EC0028C16B /* BrowserScenario.swift */,
+				AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -151,6 +150,7 @@
 				39AD1CB926527265002DCA0A /* Props */,
 				AFCDEF1F265131C600DAC1E4 /* Actors */,
 				AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */,
+				AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */,
 				AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */,
 				AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */,
 			);
@@ -195,7 +195,7 @@
 		AFCDEF1E2651291100DAC1E4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				AF72CE182656678A0028C16B /* Advertiser */,
+				AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */,
 				AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */,
 			);
 			path = Scene;
@@ -345,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nFLYNNLINTSWIFTPM=${SRCROOT}/.build/checkouts/flynn/meta/FlynnLint\nFLYNNLINTXCODE=${BUILD_ROOT}/../../SourcePackages/checkouts/flynn/meta/FlynnLint\n\nif [ -f \"${FLYNNLINTSWIFTPM}\" ]; then\n    ${FLYNNLINTSWIFTPM} ${SRCROOT}\nelif [ -f \"${FLYNNLINTXCODE}\" ]; then\n    ${FLYNNLINTXCODE} ${SRCROOT}\nelse\n    echo \"warning: Unable to find FlynnLint, aborting...\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -359,6 +359,8 @@
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
 				AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
+				AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */,
+				AF72CE31265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
 				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
@@ -378,11 +380,13 @@
 			files = (
 				AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */,
 				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
+				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
 				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
 				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,
 				AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */,
+				AF72CE2C26575FB80028C16B /* RoleSelectionView.swift in Sources */,
 				AFCDEF0F2651248D00DAC1E4 /* ContentView.swift in Sources */,
 				AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,

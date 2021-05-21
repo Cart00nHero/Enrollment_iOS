@@ -12,12 +12,15 @@ import MultipeerConnectivity
 
 class AdvertiserScenario: Actor {
 
-    private let displayName = UIDevice.current.name
+    private var displayName = UIDevice.current.name
     private let serviceType = "Visitor-Endrollment"
     private var host: PeerHost?
     private var advertiser: PeerAdvertiser?
     
-    private func _beAdvertiser() {
+    private func _beAdvertiser(peerName: String) {
+        if !peerName.isEmpty {
+            displayName = peerName
+        }
         host = PeerHost(sender: self, peerName: displayName, serviceType: serviceType, encryption: .none)
         advertiser = PeerAdvertiser(sender: self, peerName: displayName, serviceType: serviceType)
     }
@@ -26,6 +29,9 @@ class AdvertiserScenario: Actor {
     }
     private func _beStopAdvertising() {
         advertiser?.beStopAdvertising()
+    }
+    private func _beGetDataSource(_complete:@escaping () -> Void) {
+        
     }
 }
 extension AdvertiserScenario: PeerHostProtocol,AdvertiserProtocol {
@@ -54,8 +60,8 @@ extension AdvertiserScenario: PeerHostProtocol,AdvertiserProtocol {
 extension AdvertiserScenario {
 
     @discardableResult
-    public func beAdvertiser() -> Self {
-        unsafeSend(_beAdvertiser)
+    public func beAdvertiser(peerName: String) -> Self {
+        unsafeSend { self._beAdvertiser(peerName: peerName) }
         return self
     }
     @discardableResult
@@ -66,6 +72,11 @@ extension AdvertiserScenario {
     @discardableResult
     public func beStopAdvertising() -> Self {
         unsafeSend(_beStopAdvertising)
+        return self
+    }
+    @discardableResult
+    public func beGetDataSource(_complete: @escaping () -> Void) -> Self {
+        unsafeSend { self._beGetDataSource(_complete: _complete) }
         return self
     }
     @discardableResult
