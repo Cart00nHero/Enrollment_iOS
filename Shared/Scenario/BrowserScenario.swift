@@ -112,6 +112,27 @@ class BrowserScenario: Actor {
         UserDefaults.standard.setValue(json, forKey: "visited_unit_info")
         beBrowser()
     }
+    private func _beChangeRole(
+        enable: Bool,_ complete:@escaping (String) -> Void) {
+        if enable {
+            UserDefaults.standard.removeObject(forKey: "role_of_user")
+            DispatchQueue.main.async {
+                complete("")
+            }
+        } else {
+            if let role =
+                UserDefaults.standard.object(forKey: "role_of_user") as? String {
+                DispatchQueue.main.async {
+                    complete(role)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    complete("")
+                }
+            }
+        }
+        
+    }
 }
 extension BrowserScenario: StoreSubscriber {
     func newState(state: SceneState) {
@@ -204,6 +225,11 @@ extension BrowserScenario {
     @discardableResult
     public func beSaveUnit() -> Self {
         unsafeSend(_beSaveUnit)
+        return self
+    }
+    @discardableResult
+    public func beChangeRole(enable: Bool, _ complete: @escaping (String) -> Void) -> Self {
+        unsafeSend { self._beChangeRole(enable: enable, complete) }
         return self
     }
     @discardableResult

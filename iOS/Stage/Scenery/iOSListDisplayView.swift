@@ -12,7 +12,7 @@ struct iOSListDisplayView: View {
     @Binding var item: ListInputItem
     @State private var buttonTitle: String = "Copy"
     @State private var contentValue: String = ""
-    @State private var textColor: Color = Color.black
+    @State private var textColor: Color = Color.blue
     var body: some View {
         HStack {
             Text(item.title)
@@ -44,7 +44,6 @@ struct iOSListDisplayView: View {
         if item.title.contains("表格網址：") {
             buttonTitle = "Go"
             contentValue = "點擊Go前往填寫"
-            textColor = Color.blue
         } else {
             contentValue = item.content
         }

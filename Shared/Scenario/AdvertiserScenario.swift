@@ -95,7 +95,29 @@ class AdvertiserScenario: Actor {
         UserDefaults.standard.setValue(json, forKey: "visitor_info")
         beAdvertiser()
     }
-    func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
+    private func _beChangeRole(
+        enable: Bool,_ complete:@escaping (String) -> Void) {
+        if enable {
+            UserDefaults.standard.removeObject(forKey: "role_of_user")
+            DispatchQueue.main.async {
+                complete("")
+            }
+        } else {
+            if let role =
+                UserDefaults.standard.object(forKey: "role_of_user") as? String {
+                DispatchQueue.main.async {
+                    complete(role)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    complete("")
+                }
+            }
+        }
+        
+    }
+    // MARK: - private
+    private func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
         return [
             ListInputItem(
                 title: "店家代碼：",
@@ -206,6 +228,11 @@ extension AdvertiserScenario {
     @discardableResult
     public func beSaveVisitor() -> Self {
         unsafeSend(_beSaveVisitor)
+        return self
+    }
+    @discardableResult
+    public func beChangeRole(enable: Bool, _ complete: @escaping (String) -> Void) -> Self {
+        unsafeSend { self._beChangeRole(enable: enable, complete) }
         return self
     }
     @discardableResult

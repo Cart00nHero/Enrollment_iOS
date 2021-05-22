@@ -14,6 +14,7 @@ struct iOSAdvertiserView: View {
     @State private var formDatoSource: [ListInputItem] = []
     @State private var buttonTitle: String = "編輯"
     @State private var toggleSwitchOn = false
+    @State private var roleBtnTitle = "變更角色"
     
     var body: some View {
         VStack {
@@ -54,6 +55,16 @@ struct iOSAdvertiserView: View {
                 List(formDatoSource.indexed(), id: \.1.self) { (idx, content) in
                     iOSListDisplayView(index: idx, item: .constant(content))
                 }
+                Button(action: {
+                    scenario.beChangeRole(enable: true) { _ in
+                        roleBtnTitle = "角色已變更"
+                    }
+                }, label: {
+                    Text(roleBtnTitle)
+                })
+                Spacer()
+                Text("該功能於下次App啟動生效").font(Font.system(size: 14.0))
+                Spacer()
             }.frame(height: UIScreen.main.bounds.height/2.0, alignment: .top)
         }.navigationBarHidden(true)
         .ignoresSafeArea(.keyboard, edges: .bottom)
@@ -66,6 +77,13 @@ struct iOSAdvertiserView: View {
                     newState.currentAction as? ReceivedInitationAction {
                     formDatoSource = action.source
                     toggleSwitchOn = false
+                }
+            }
+            scenario.beChangeRole(enable: false) { role in
+                if role.isEmpty {
+                    roleBtnTitle = "角色已變更"
+                } else {
+                    roleBtnTitle = "變更角色"
                 }
             }
         }
