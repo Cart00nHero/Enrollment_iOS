@@ -110,7 +110,7 @@ class AdvertiserScenario: Actor {
             ),
             ListInputItem(
                 title: "表格網址：",
-                placeholder: "請輸入表格所在網址：",
+                placeholder: "請輸入表格所在網址",
                 keyboardType: .URL,
                 content: content.cloudForm
             )
