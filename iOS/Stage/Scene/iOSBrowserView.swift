@@ -20,7 +20,7 @@ struct iOSBrowserView: View {
             HStack {
                 Spacer().frame(width: 10.0)
                 Toggle(isOn: $toggleSwitchOn, label: {
-                    Text("發送表格")
+                    Text("發送資訊")
                 }).onChange(of: toggleSwitchOn) { isOn in
                     if isOn {
                         scenario.beStart()
