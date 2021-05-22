@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct iOSTabView: View {
-    
+    @State private var tabIndex = 0
     @State private var pages = [
         TabPageItem(
             pageView: AnyView(iOSAdvertiserView()),
@@ -23,7 +23,8 @@ struct iOSTabView: View {
     ]
     var body: some View {
         HStack {
-            TabPageView(pageItems: $pages)
+            TabPageView(
+                items: $pages, tabIdx: $tabIndex)
         }
     }
 }

@@ -17,7 +17,7 @@ class AdvertiserScenario: Actor {
     private let serviceType = "visitor-record"
     private var host: PeerHost?
     private var advertiser: PeerAdvertiser?
-    private var stateChanged: ((SceneState) -> Void)?
+    private var newStateEvent: ((SceneState) -> Void)?
     private lazy var visitor = VisitorInfo()
     
     override init() {
@@ -28,7 +28,7 @@ class AdvertiserScenario: Actor {
         beAdvertiser()
     }
     private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
-        stateChanged = complete
+        newStateEvent = complete
         appStore.subscribe(self) {
             $0.select {
                 $0.sceneState
@@ -37,7 +37,7 @@ class AdvertiserScenario: Actor {
     }
     private func _beUnSubscribeRedux() {
         appStore.unsubscribe(self)
-        stateChanged = nil
+        newStateEvent = nil
     }
     private func _beAdvertiser() {
         if !visitor.name.isEmpty {
@@ -119,16 +119,21 @@ class AdvertiserScenario: Actor {
 }
 extension AdvertiserScenario: StoreSubscriber {
     func newState(state: SceneState) {
-        switch state.currentAction {
-        case let action as ListTextFieldOnChangeAction:
-            print(action)
-            beStoreVisitorInfo(
-                index: action.index, value: action.newValue)
-        default: break
-        }
-        if stateChanged != nil {
-            DispatchQueue.main.async { [self] in
-                stateChanged!(state)
+        unsafeSend { [self] in
+            switch state.currentAction {
+            case let action as ListTextFieldOnChangeAction:
+                print(action)
+                beStoreVisitorInfo(
+                    index: action.index, value: action.newValue)
+            case let action as OpenFormURLAction:
+                Courier().beApplyExpress(
+                    sender: self, recipient: "WebViewScenario", content: action.urlString, nil)
+            default: break
+            }
+            if newStateEvent != nil {
+                DispatchQueue.main.async {
+                    newStateEvent!(state)
+                }
             }
         }
     }
@@ -155,12 +160,6 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
         if context != nil {
             let json = String(data: context!, encoding: .utf8)
             guard let unitInfo: VisitedUnit = json?.toEntity(to: VisitedUnit.self) else { return }
-            if !unitInfo.cloudForm.isEmpty {
-                Courier().beApplyExpress(
-                    sender: self,
-                    recipient: "WebViewScenario",
-                    content: unitInfo.cloudForm, nil)
-            }
             let result = converToFormDatoSources(content: unitInfo)
             appStore.dispatch(ReceivedInitationAction(source: result))
         }
@@ -171,7 +170,7 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
 // Contents of file after this marker will be overwritten as needed
 
 extension AdvertiserScenario {
-
+    
     @discardableResult
     public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
         unsafeSend { self._beSubscribeRedux(complete) }
@@ -242,5 +241,5 @@ extension AdvertiserScenario {
         unsafeSend { self._beAdvertiser(didReceiveInvitationFrom: peerID, context: context, replyInvitation: replyInvitation) }
         return self
     }
-
+    
 }

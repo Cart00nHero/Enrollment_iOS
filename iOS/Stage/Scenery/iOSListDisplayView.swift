@@ -26,6 +26,7 @@ struct iOSListDisplayView: View {
                         buttonTitle = "Copy"
                     }
                 } else {
+                    appStore.dispatch(OpenFormURLAction(urlString: item.content))
                 }
             } label: {
                 Text(buttonTitle)
