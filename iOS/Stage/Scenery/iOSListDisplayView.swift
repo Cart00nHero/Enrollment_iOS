@@ -12,24 +12,28 @@ struct iOSListDisplayView: View {
     @Binding var item: ListInputItem
     @State private var buttonTitle: String = "Copy"
     @State private var contentValue: String = ""
+    @State private var textColor: Color = Color.black
     var body: some View {
         HStack {
             Text(item.title)
             Text(contentValue)
             Spacer()
             Button {
-                if buttonTitle == "Copy" && !item.content.isEmpty {
-                    UIPasteboard.general.string = item.content
-                    buttonTitle = "Copied"
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                       // Code you want to be delayed
-                        buttonTitle = "Copy"
-                    }
+                if item.title.contains("表格網址：") {
+                    appStore.dispatch(
+                        OpenFormURLAction(urlString: item.content))
                 } else {
-                    appStore.dispatch(OpenFormURLAction(urlString: item.content))
+                    if !item.content.isEmpty {
+                        UIPasteboard.general.string = item.content
+                        buttonTitle = "Copied"
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            // Code you want to be delayed
+                            buttonTitle = "Copy"
+                        }
+                    }
                 }
             } label: {
-                Text(buttonTitle)
+                Text(buttonTitle).foregroundColor(textColor)
             }
             Spacer().frame(width: 20, height: 0, alignment: .center)
         }.onAppear() {
@@ -39,7 +43,8 @@ struct iOSListDisplayView: View {
     private func getItemContent(_ item: ListInputItem) {
         if item.title.contains("表格網址：") {
             buttonTitle = "Go"
-            contentValue = "點擊Go前往網頁"
+            contentValue = "點擊Go前往填寫"
+            textColor = Color.blue
         } else {
             contentValue = item.content
         }

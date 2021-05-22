@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct iOSTabView: View {
+    private let scenario = TabActionScenario()
     @State private var tabIndex = 0
     @State private var pages = [
         TabPageItem(
@@ -25,6 +26,17 @@ struct iOSTabView: View {
         HStack {
             TabPageView(
                 items: $pages, tabIdx: $tabIndex)
+        }.onAppear() {
+            scenario.beSubscribeRedux { newState in
+                switch newState.currentAction {
+                case is OpenFormURLAction:
+                    tabIndex = 1
+                default: break
+                }
+            }
+        }
+        .onDisappear() {
+            scenario.beUnSubscribeRedux()
         }
     }
 }

@@ -98,7 +98,7 @@ class AdvertiserScenario: Actor {
     func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
         return [
             ListInputItem(
-                title: "代碼：",
+                title: "店家代碼：",
                 placeholder: "請輸入店家代號",
                 keyboardType: .asciiCapable,
                 content: content.code
@@ -125,9 +125,6 @@ extension AdvertiserScenario: StoreSubscriber {
                 print(action)
                 beStoreVisitorInfo(
                     index: action.index, value: action.newValue)
-            case let action as OpenFormURLAction:
-                Courier().beApplyExpress(
-                    sender: self, recipient: "WebViewScenario", content: action.urlString, nil)
             default: break
             }
             if newStateEvent != nil {
@@ -170,7 +167,7 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
 // Contents of file after this marker will be overwritten as needed
 
 extension AdvertiserScenario {
-    
+
     @discardableResult
     public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
         unsafeSend { self._beSubscribeRedux(complete) }
@@ -241,5 +238,5 @@ extension AdvertiserScenario {
         unsafeSend { self._beAdvertiser(didReceiveInvitationFrom: peerID, context: context, replyInvitation: replyInvitation) }
         return self
     }
-    
+
 }
