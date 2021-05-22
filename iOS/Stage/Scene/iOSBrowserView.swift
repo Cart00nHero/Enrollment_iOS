@@ -15,11 +15,11 @@ struct iOSBrowserView: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height: 10.0)
+            Spacer().frame(height: 30.0)
             HStack {
                 Spacer().frame(width: 10.0)
                 Toggle(isOn: $toggleSwitchOn, label: {
-                    Text("送表")
+                    Text("發送表格")
                 }).onChange(of: toggleSwitchOn) { isOn in
                     if isOn {
                         scenario.beStart()
@@ -45,8 +45,9 @@ struct iOSBrowserView: View {
             }, label: {
                 Text(buttonTitle)
             })
-            Spacer()
+            Spacer().frame(height: UIScreen.main.bounds.height/2.0)
         }.navigationBarHidden(true)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .onAppear() {
             scenario.beGetDataSource { source in
                 self.dataSource = source

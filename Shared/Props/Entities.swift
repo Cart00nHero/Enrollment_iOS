@@ -25,3 +25,9 @@ struct VisitedUnit: Convertable {
     var name = ""
     var cloudForm = ""
 }
+
+struct TabPageItem {
+    let pageView: AnyView
+    var tabImage: Image = Image(systemName: "bubble.left")
+    var title = ""
+}
