@@ -51,6 +51,7 @@ struct iOSAdvertiserView: View {
                             scenario.beStop()
                         }
                     }
+                    Spacer().frame(width: 10.0)
                 }
                 List(formDatoSource.indexed(), id: \.1.self) { (idx, content) in
                     iOSListDisplayView(index: idx, item: .constant(content))

@@ -28,6 +28,7 @@ struct iOSBrowserView: View {
                         scenario.beStop()
                     }
                 }
+                Spacer().frame(width: 10.0)
             }
             Divider().frame(height: 2.0)
             List(dataSource.indexed(), id: \.1.self) { (idx, content) in
@@ -48,7 +49,7 @@ struct iOSBrowserView: View {
             }, label: {
                 Text(buttonTitle)
             })
-            Spacer().frame(height: UIScreen.main.bounds.height/2.0)
+            Spacer().frame(height: UIScreen.main.bounds.height/3.0)
             Button(action: {
                 scenario.beChangeRole(enable: true) { _ in
                     roleBtnTitle = "角色已變更"
