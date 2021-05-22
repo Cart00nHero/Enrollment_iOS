@@ -13,6 +13,8 @@
 		39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
 		39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
 		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
+		AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
+		AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
 		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
 		AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
 		AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662926577AB4006DE4AB /* BeaconReceiver.swift */; };
@@ -72,6 +74,7 @@
 		39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
 		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		AF0A296026591A10008F4E3A /* TabActionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabActionScenario.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
 		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
 		AF54662C26577B56006DE4AB /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 				AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */,
 				AF72CE33265767770028C16B /* StartAppScenario.swift */,
 				AF5466602658C538006DE4AB /* WebViewScenario.swift */,
+				AF0A296026591A10008F4E3A /* TabActionScenario.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -469,6 +473,7 @@
 				AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */,
 				AF5466662658CAFD006DE4AB /* TabPageView.swift in Sources */,
+				AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
 				AF54665A26583DE8006DE4AB /* iOSTabView.swift in Sources */,
 				AF54665F2658C50F006DE4AB /* iOSWebView.swift in Sources */,
@@ -486,6 +491,7 @@
 				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF54662E26577B56006DE4AB /* Entities.swift in Sources */,
+				AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF5466672658CAFD006DE4AB /* TabPageView.swift in Sources */,
 				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
 				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,

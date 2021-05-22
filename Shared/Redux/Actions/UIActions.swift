@@ -15,3 +15,6 @@ struct ListTextFieldOnChangeAction: Action {
 struct ReceivedInitationAction: Action {
     let source: [ListInputItem]
 }
+struct OpenFormURLAction: Action {
+    let urlString: String
+}

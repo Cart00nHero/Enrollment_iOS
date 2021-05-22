@@ -17,7 +17,7 @@ class AdvertiserScenario: Actor {
     private let serviceType = "visitor-record"
     private var host: PeerHost?
     private var advertiser: PeerAdvertiser?
-    private var stateChanged: ((SceneState) -> Void)?
+    private var newStateEvent: ((SceneState) -> Void)?
     private lazy var visitor = VisitorInfo()
     
     override init() {
@@ -28,7 +28,7 @@ class AdvertiserScenario: Actor {
         beAdvertiser()
     }
     private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
-        stateChanged = complete
+        newStateEvent = complete
         appStore.subscribe(self) {
             $0.select {
                 $0.sceneState
@@ -37,7 +37,7 @@ class AdvertiserScenario: Actor {
     }
     private func _beUnSubscribeRedux() {
         appStore.unsubscribe(self)
-        stateChanged = nil
+        newStateEvent = nil
     }
     private func _beAdvertiser() {
         if !visitor.name.isEmpty {
@@ -95,10 +95,32 @@ class AdvertiserScenario: Actor {
         UserDefaults.standard.setValue(json, forKey: "visitor_info")
         beAdvertiser()
     }
-    func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
+    private func _beChangeRole(
+        enable: Bool,_ complete:@escaping (String) -> Void) {
+        if enable {
+            UserDefaults.standard.removeObject(forKey: "role_of_user")
+            DispatchQueue.main.async {
+                complete("")
+            }
+        } else {
+            if let role =
+                UserDefaults.standard.object(forKey: "role_of_user") as? String {
+                DispatchQueue.main.async {
+                    complete(role)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    complete("")
+                }
+            }
+        }
+        
+    }
+    // MARK: - private
+    private func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
         return [
             ListInputItem(
-                title: "代碼：",
+                title: "店家代碼：",
                 placeholder: "請輸入店家代號",
                 keyboardType: .asciiCapable,
                 content: content.code
@@ -119,16 +141,18 @@ class AdvertiserScenario: Actor {
 }
 extension AdvertiserScenario: StoreSubscriber {
     func newState(state: SceneState) {
-        switch state.currentAction {
-        case let action as ListTextFieldOnChangeAction:
-            print(action)
-            beStoreVisitorInfo(
-                index: action.index, value: action.newValue)
-        default: break
-        }
-        if stateChanged != nil {
-            DispatchQueue.main.async { [self] in
-                stateChanged!(state)
+        unsafeSend { [self] in
+            switch state.currentAction {
+            case let action as ListTextFieldOnChangeAction:
+                print(action)
+                beStoreVisitorInfo(
+                    index: action.index, value: action.newValue)
+            default: break
+            }
+            if newStateEvent != nil {
+                DispatchQueue.main.async {
+                    newStateEvent!(state)
+                }
             }
         }
     }
@@ -155,12 +179,6 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
         if context != nil {
             let json = String(data: context!, encoding: .utf8)
             guard let unitInfo: VisitedUnit = json?.toEntity(to: VisitedUnit.self) else { return }
-            if !unitInfo.cloudForm.isEmpty {
-                Courier().beApplyExpress(
-                    sender: self,
-                    recipient: "WebViewScenario",
-                    content: unitInfo.cloudForm, nil)
-            }
             let result = converToFormDatoSources(content: unitInfo)
             appStore.dispatch(ReceivedInitationAction(source: result))
         }
@@ -210,6 +228,11 @@ extension AdvertiserScenario {
     @discardableResult
     public func beSaveVisitor() -> Self {
         unsafeSend(_beSaveVisitor)
+        return self
+    }
+    @discardableResult
+    public func beChangeRole(enable: Bool, _ complete: @escaping (String) -> Void) -> Self {
+        unsafeSend { self._beChangeRole(enable: enable, complete) }
         return self
     }
     @discardableResult

@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct TabPageView: View {
-    @Binding var pageItems:[TabPageItem]
+    @Binding var items:[TabPageItem]
+    @Binding var tabIdx: Int
     var body: some View {
-        TabView {
-            ForEach(0..<pageItems.count) { i in
+        TabView(selection: $tabIdx) {
+            ForEach(0..<items.count) { i in
                 ZStack {
-                    pageItems[i].pageView.tag(i)
+                    items[i].pageView.tag(i)
                 }.tabItem({
-                    pageItems[i].tabImage
-                    Text(pageItems[i].title)
+                    items[i].tabImage
+                    Text(items[i].title)
                 })
-//                .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
             }
         }
 //        .tabViewStyle(PageTabViewStyle())
