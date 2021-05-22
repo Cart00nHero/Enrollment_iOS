@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct iOSTabView: View {
+    
+    @State private var pages = [
+        TabPageItem(
+            pageView: AnyView(iOSAdvertiserView()),
+            tabImage: Image(systemName: "doc.text.magnifyingglass"),
+            title: "資料"
+        ),
+        TabPageItem(
+            pageView: AnyView(iOSWebView()),
+            tabImage: Image(systemName: "network"),
+            title: "網頁"
+        )
+    ]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            TabPageView(pageItems: $pages)
+        }
     }
 }
 

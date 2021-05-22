@@ -11,7 +11,6 @@
 		39AD1CBE265272BD002DCA0A /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */; };
 		39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
 		39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CBC265272BD002DCA0A /* Extensions.swift */; };
-		39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */; };
 		39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
 		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
 		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
@@ -34,8 +33,12 @@
 		AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665626581533006DE4AB /* TextFieldClearButton.swift */; };
 		AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665626581533006DE4AB /* TextFieldClearButton.swift */; };
 		AF54665A26583DE8006DE4AB /* iOSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665926583DE8006DE4AB /* iOSTabView.swift */; };
-		AF54665C26583E1F006DE4AB /* TabPageView().swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665B26583E1F006DE4AB /* TabPageView().swift */; };
-		AF54665D26583E20006DE4AB /* TabPageView().swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665B26583E1F006DE4AB /* TabPageView().swift */; };
+		AF54665F2658C50F006DE4AB /* iOSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665E2658C50F006DE4AB /* iOSWebView.swift */; };
+		AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466602658C538006DE4AB /* WebViewScenario.swift */; };
+		AF5466662658CAFD006DE4AB /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466652658CAFD006DE4AB /* TabPageView.swift */; };
+		AF5466672658CAFD006DE4AB /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466652658CAFD006DE4AB /* TabPageView.swift */; };
+		AF5466692658CC07006DE4AB /* SwiftUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466682658CC07006DE4AB /* SwiftUIWebView.swift */; };
+		AF54666A2658CC07006DE4AB /* SwiftUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466682658CC07006DE4AB /* SwiftUIWebView.swift */; };
 		AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
 		AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */; };
 		AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE0C26563BDE0028C16B /* PeerHost.swift */; };
@@ -63,13 +66,11 @@
 		AFCDEF1C265124EB00DAC1E4 /* Flynn in Frameworks */ = {isa = PBXBuildFile; productRef = AFCDEF1B265124EB00DAC1E4 /* Flynn */; };
 		AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
 		AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
-		AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39AD1CBB265272BD002DCA0A /* IndexedCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexedCollection.swift; sourceTree = "<group>"; };
 		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordView.swift; sourceTree = "<group>"; };
 		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
 		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
@@ -82,7 +83,10 @@
 		AF546654265812BE006DE4AB /* iOSBrowserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserListView.swift; sourceTree = "<group>"; };
 		AF54665626581533006DE4AB /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		AF54665926583DE8006DE4AB /* iOSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTabView.swift; sourceTree = "<group>"; };
-		AF54665B26583E1F006DE4AB /* TabPageView().swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabPageView().swift"; sourceTree = "<group>"; };
+		AF54665E2658C50F006DE4AB /* iOSWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSWebView.swift; sourceTree = "<group>"; };
+		AF5466602658C538006DE4AB /* WebViewScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScenario.swift; sourceTree = "<group>"; };
+		AF5466652658CAFD006DE4AB /* TabPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
+		AF5466682658CC07006DE4AB /* SwiftUIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIWebView.swift; sourceTree = "<group>"; };
 		AF72CDFD26552BE30028C16B /* BeaconBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconBroadcaster.swift; sourceTree = "<group>"; };
 		AF72CE0C26563BDE0028C16B /* PeerHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerHost.swift; sourceTree = "<group>"; };
 		AF72CE0D26563BDE0028C16B /* PeerBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerBrowser.swift; sourceTree = "<group>"; };
@@ -102,7 +106,6 @@
 		AFCDEF0A2651248D00DAC1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCDEF0B2651248D00DAC1E4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		AFCDEF21265131FC00DAC1E4 /* Courier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courier.swift; sourceTree = "<group>"; };
-		AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataRecordScenario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +153,8 @@
 				AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */,
 				AF546654265812BE006DE4AB /* iOSBrowserListView.swift */,
 				AF54665626581533006DE4AB /* TextFieldClearButton.swift */,
-				AF54665B26583E1F006DE4AB /* TabPageView().swift */,
+				AF5466652658CAFD006DE4AB /* TabPageView.swift */,
+				AF5466682658CC07006DE4AB /* SwiftUIWebView.swift */,
 			);
 			path = Scenery;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 				AF72CE21265670EC0028C16B /* BrowserScenario.swift */,
 				AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */,
 				AF72CE33265767770028C16B /* StartAppScenario.swift */,
+				AF5466602658C538006DE4AB /* WebViewScenario.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -285,8 +290,8 @@
 			children = (
 				AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */,
 				AF5466262657748F006DE4AB /* iOSBrowserView.swift */,
-				AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */,
 				AF54665926583DE8006DE4AB /* iOSTabView.swift */,
+				AF54665E2658C50F006DE4AB /* iOSWebView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -308,15 +313,6 @@
 				AFCDEF21265131FC00DAC1E4 /* Courier.swift */,
 			);
 			path = Express;
-			sourceTree = "<group>";
-		};
-		AFCDEF27265138F000DAC1E4 /* PersonalDataRecord */ = {
-			isa = PBXGroup;
-			children = (
-				AFCDEF2B265139DE00DAC1E4 /* PersonalDataRecordScenario.swift */,
-				39AD1CC126527361002DCA0A /* PersonalDataRecordView.swift */,
-			);
-			path = PersonalDataRecord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,12 +443,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */,
-				39AD1CC226527361002DCA0A /* PersonalDataRecordView.swift in Sources */,
 				AF72CE34265767770028C16B /* StartAppScenario.swift in Sources */,
 				AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */,
-				AF54665C26583E1F006DE4AB /* TabPageView().swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
-				AFCDEF2C265139DE00DAC1E4 /* PersonalDataRecordScenario.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AF54664A2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */,
@@ -466,6 +459,7 @@
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */,
 				AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
+				AF5466692658CC07006DE4AB /* SwiftUIWebView.swift in Sources */,
 				AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */,
 				39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */,
 				AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
@@ -473,8 +467,11 @@
 				AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */,
 				AF54662D26577B56006DE4AB /* Entities.swift in Sources */,
 				AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
+				AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */,
+				AF5466662658CAFD006DE4AB /* TabPageView.swift in Sources */,
 				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
 				AF54665A26583DE8006DE4AB /* iOSTabView.swift in Sources */,
+				AF54665F2658C50F006DE4AB /* iOSWebView.swift in Sources */,
 				AF54663426578F10006DE4AB /* iOSListInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,19 +486,20 @@
 				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF54662E26577B56006DE4AB /* Entities.swift in Sources */,
+				AF5466672658CAFD006DE4AB /* TabPageView.swift in Sources */,
 				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
 				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */,
 				AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */,
 				AF54664F2657AFAE006DE4AB /* UIActions.swift in Sources */,
-				AF54665D26583E20006DE4AB /* TabPageView().swift in Sources */,
 				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,
 				AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */,
 				AFCDEF0F2651248D00DAC1E4 /* ContentView.swift in Sources */,
 				AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AF54664B2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
+				AF54666A2658CC07006DE4AB /* SwiftUIWebView.swift in Sources */,
 				AF54662B26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
 				AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */,
 				39AD1CBE265272BD002DCA0A /* IndexedCollection.swift in Sources */,

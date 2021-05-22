@@ -77,17 +77,12 @@ extension KeyedDecodingContainer {
     return try decode(T.self, forKey: key)
   }
 }
-
-//func beEntityToJson<T: Codable>(
-//    from entity: T,
-//    _ complete: @escaping (String) -> Void){
-//    DispatchQueue.global().async {
-//        do {
-//            let jsonData = try JSONEncoder().encode(entity)
-//            let jsonString = String(data: jsonData, encoding: .utf8) ?? ""
-//            complete(jsonString)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//    }
-//}
+extension URL {
+    func isReachable(completion: @escaping (Bool) -> ()) {
+        var request = URLRequest(url: self)
+        request.httpMethod = "HEAD"
+        URLSession.shared.dataTask(with: request) { _, response, _ in
+            completion((response as? HTTPURLResponse)?.statusCode == 200)
+        }.resume()
+    }
+}

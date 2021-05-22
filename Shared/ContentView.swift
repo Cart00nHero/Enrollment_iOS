@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     private let scenario = StartAppScenario()
     @State var activeRoleSelection = false
-    @State var activeAdvertiser = false
+    @State var activeVisitorUI = false
     @State var activeBrowser = false
     var body: some View {
         NavigationView {
@@ -21,8 +21,8 @@ struct ContentView: View {
                     Text("")
                 }.hidden()
                 NavigationLink(
-                    destination: iOSAdvertiserView(),
-                    isActive: $activeAdvertiser) {
+                    destination: iOSTabView(),
+                    isActive: $activeVisitorUI) {
                     Text("")
                 }.hidden()
                 NavigationLink(
@@ -31,14 +31,18 @@ struct ContentView: View {
                     Text("")
                 }
             }.onAppear() {
-                scenario.beGetRoleOfUser { role in
-                    switch role {
-                    case "Visitor":
-                        self.activeAdvertiser = true
-                    case "Visited_Unit":
-                        self.activeBrowser = true
-                    default:
-                        self.activeRoleSelection = true
+                // 頁面切太快會有奇怪的事情發生
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                   // Code you want to be delayed
+                    scenario.beGetRoleOfUser { role in
+                        switch role {
+                        case "Visitor":
+                            self.activeVisitorUI = true
+                        case "Visited_Unit":
+                            self.activeBrowser = true
+                        default:
+                            self.activeRoleSelection = true
+                        }
                     }
                 }
             }

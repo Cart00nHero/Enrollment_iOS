@@ -42,7 +42,7 @@ struct iOSAdvertiserView: View {
                 HStack {
                     Spacer().frame(width: 10.0)
                     Toggle(isOn: $toggleSwitchOn, label: {
-                        Text("領表__，要知所云")
+                        Text("領取表格")
                     }).onChange(of: toggleSwitchOn) { isOn in
                         if isOn {
                             scenario.beStart()

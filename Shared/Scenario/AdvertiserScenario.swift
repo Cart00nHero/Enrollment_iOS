@@ -155,7 +155,12 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
         if context != nil {
             let json = String(data: context!, encoding: .utf8)
             guard let unitInfo: VisitedUnit = json?.toEntity(to: VisitedUnit.self) else { return }
-            print("收到邀請:\(unitInfo.name)")
+            if !unitInfo.cloudForm.isEmpty {
+                Courier().beApplyExpress(
+                    sender: self,
+                    recipient: "WebViewScenario",
+                    content: unitInfo.cloudForm, nil)
+            }
             let result = converToFormDatoSources(content: unitInfo)
             appStore.dispatch(ReceivedInitationAction(source: result))
         }
@@ -166,7 +171,7 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
 // Contents of file after this marker will be overwritten as needed
 
 extension AdvertiserScenario {
-    
+
     @discardableResult
     public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
         unsafeSend { self._beSubscribeRedux(complete) }
@@ -237,5 +242,5 @@ extension AdvertiserScenario {
         unsafeSend { self._beAdvertiser(didReceiveInvitationFrom: peerID, context: context, replyInvitation: replyInvitation) }
         return self
     }
-    
+
 }
