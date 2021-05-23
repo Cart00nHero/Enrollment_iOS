@@ -61,7 +61,7 @@ struct iOSBrowserView: View {
             Text("角色變更於重新啟動App後選擇")
                 .foregroundColor(skyBlue(1.0))
                 .multilineTextAlignment(.center)
-                .font(Font.system(size: 14.0))
+                .font(.system(size: 14.0))
             Spacer()
         }.navigationBarHidden(true)
         .ignoresSafeArea(.keyboard, edges: .bottom)

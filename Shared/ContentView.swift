@@ -37,7 +37,7 @@ struct ContentView: View {
                     Image("image_space_surise").resizable().aspectRatio(contentMode: .fill)
                     Text("Even after the darkest nights, morning always comes.")
                         .foregroundColor(golden(1.0))
-                        .font(Font.system(size: 18.0))
+                        .font(.system(size: 24.0, weight: .heavy))
                         .multilineTextAlignment(.center)
                 }
             }.navigationBarHidden(true)

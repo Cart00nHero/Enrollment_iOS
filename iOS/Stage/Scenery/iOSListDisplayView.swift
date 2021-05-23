@@ -13,10 +13,15 @@ struct iOSListDisplayView: View {
     @State private var buttonTitle: String = "Copy"
     @State private var contentValue: String = ""
     @State private var textColor: Color = flameScarlet(1.0)
+    @State private var fontSize:CGFloat = 16.0
     var body: some View {
         HStack {
-            Text(item.title).foregroundColor(golden(1.0))
-            Text(contentValue).foregroundColor(golden(1.0))
+            Text(item.title)
+                .font(.system(size: fontSize))
+                .foregroundColor(golden(1.0))
+            Text(contentValue)
+                .font(.system(size: fontSize))
+                .foregroundColor(golden(1.0))
             Spacer()
             Button {
                 if item.title.contains("表格網址：") {
@@ -33,7 +38,9 @@ struct iOSListDisplayView: View {
                     }
                 }
             } label: {
-                Text(buttonTitle).foregroundColor(textColor)
+                Text(buttonTitle)
+                    .font(.system(size: fontSize))
+                    .foregroundColor(textColor)
             }
             Spacer().frame(width: 20, height: 0, alignment: .center)
         }.onAppear() {
@@ -43,7 +50,7 @@ struct iOSListDisplayView: View {
     private func getItemContent(_ item: ListInputItem) {
         if item.title.contains("表格網址：") {
             buttonTitle = "Go"
-            contentValue = "點擊Go前往填寫"
+            contentValue = "Go前往填寫"
         } else {
             contentValue = item.content
         }

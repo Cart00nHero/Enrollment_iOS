@@ -68,7 +68,7 @@ class AdvertiserScenario: Actor {
                 content: visitor.tel
             ),
             ListInputItem(
-                title: "身分證字號：",
+                title: "身份證字號：",
                 placeholder: "請輸入您的身份證字號",
                 keyboardType: .asciiCapable,
                 content: visitor.identityNo

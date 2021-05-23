@@ -11,10 +11,14 @@ struct iOSListInputView: View {
     let index: Int
     @Binding var item: ListInputItem
     @State private var contentValue = ""
+    @State private var fontSize:CGFloat = 16.0
     var body: some View {
         HStack {
-            Text(item.title).foregroundColor(golden(1.0))
+            Text(item.title)
+                .font(.system(size: fontSize))
+                .foregroundColor(golden(1.0))
             TextField(item.placeholder, text: $contentValue)
+                .font(.system(size: fontSize))
                 .modifier(TextFieldClearButton(text: $contentValue))
                 .keyboardType(item.keyboardType)
                 .onChange(of: contentValue) { newValue in

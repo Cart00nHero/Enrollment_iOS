@@ -12,8 +12,12 @@ struct iOSBrowserListView: View {
     @Binding var item: ListInputItem
     var body: some View {
         HStack {
-            Text(item.title).foregroundColor(golden(1.0))
-            Text(item.content).foregroundColor(golden(1.0))
+            Text(item.title)
+                .font(.system(size: 16.0))
+                .foregroundColor(golden(1.0))
+            Text(item.content)
+                .font(.system(size: 16.0))
+                .foregroundColor(golden(1.0))
         }
     }
 }
