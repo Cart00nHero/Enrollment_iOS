@@ -21,7 +21,7 @@ struct TabPageView: View {
                 })
                 .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
             }
-        }
+        }.accentColor(golden(1.0))
 //        .tabViewStyle(PageTabViewStyle())
 //        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }

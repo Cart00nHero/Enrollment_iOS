@@ -36,13 +36,11 @@ struct ContentView: View {
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
                     Image("image_space_surise").resizable().aspectRatio(contentMode: .fill)
                     Text("Even after the darkest nights, morning always comes.")
-                        .foregroundColor(Color.white)
+                        .foregroundColor(golden(1.0))
                         .font(Font.system(size: 18.0))
                         .multilineTextAlignment(.center)
                 }
             }.navigationBarHidden(true)
-            .preferredColorScheme(.dark)
-            .foregroundColor(.black)
             .onAppear() {
                 // 頁面切太快會有奇怪的事情發生
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {

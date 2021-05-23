@@ -12,7 +12,7 @@ struct iOSBrowserView: View {
     @State private var dataSource: [ListInputItem] = []
     @State private var buttonTitle: String = "編輯"
     @State private var toggleSwitchOn = false
-    @State private var roleBtnTitle = "變更角色"
+    @State private var roleBtnTitle = "變換角色"
     
     var body: some View {
         VStack {
@@ -20,14 +20,14 @@ struct iOSBrowserView: View {
             HStack {
                 Spacer().frame(width: 10.0)
                 Toggle(isOn: $toggleSwitchOn, label: {
-                    Text("發送資訊")
+                    Text("發送資訊").foregroundColor(golden(1.0))
                 }).onChange(of: toggleSwitchOn) { isOn in
                     if isOn {
                         scenario.beStart()
                     } else {
                         scenario.beStop()
                     }
-                }
+                }.toggleStyle(SwitchToggleStyle(tint: flameScarlet(1.0)))
                 Spacer().frame(width: 10.0)
             }
             Divider().frame(height: 2.0)
@@ -47,7 +47,7 @@ struct iOSBrowserView: View {
                     dataSource = source
                 }
             }, label: {
-                Text(buttonTitle)
+                Text(buttonTitle).foregroundColor(flameScarlet(1.0))
             })
             Spacer().frame(height: UIScreen.main.bounds.height/3.0)
             Button(action: {
@@ -55,10 +55,13 @@ struct iOSBrowserView: View {
                     roleBtnTitle = "角色已變更"
                 }
             }, label: {
-                Text(roleBtnTitle)
+                Text(roleBtnTitle).foregroundColor(flameScarlet(1.0))
             })
             Spacer()
-            Text("該功能於下次App啟動生效").font(Font.system(size: 14.0))
+            Text("角色變更於重新啟動App後選擇")
+                .foregroundColor(skyBlue(1.0))
+                .multilineTextAlignment(.center)
+                .font(Font.system(size: 14.0))
             Spacer()
         }.navigationBarHidden(true)
         .ignoresSafeArea(.keyboard, edges: .bottom)

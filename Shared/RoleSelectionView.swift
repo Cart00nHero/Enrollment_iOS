@@ -11,22 +11,26 @@ fileprivate let scenario = RoleSelectionScenario()
 struct RoleSelectionView: View {
     @Binding var active: Bool
     var body: some View {
-        VStack {
-            Button(action: {
-                scenario.beActVisitor {
-                    active = false
-                }
-            }, label: {
-                Text("我是訪客")
-            })
-            Divider().frame(height: 30).hidden()
-            Button(action: {
-                scenario.beVisitedUnit {
-                    active = false
-                }
-            }, label: {
-                Text("我是店家")
-            })
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
+            Image("image_earth_sunrise")
+                .resizable().aspectRatio(contentMode: .fill)
+            VStack {
+                Button(action: {
+                    scenario.beActVisitor {
+                        active = false
+                    }
+                }, label: {
+                    Text("我是訪客").foregroundColor(golden(1.0))
+                })
+                Divider().frame(height: 30).hidden()
+                Button(action: {
+                    scenario.beVisitedUnit {
+                        active = false
+                    }
+                }, label: {
+                    Text("我是店家").foregroundColor(golden(1.0))
+                })
+            }
         }.navigationBarHidden(true)
     }
 }
