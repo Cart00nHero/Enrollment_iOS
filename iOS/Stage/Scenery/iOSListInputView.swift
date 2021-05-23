@@ -13,7 +13,7 @@ struct iOSListInputView: View {
     @State private var contentValue = ""
     var body: some View {
         HStack {
-            Text(item.title)
+            Text(item.title).foregroundColor(golden(1.0))
             TextField(item.placeholder, text: $contentValue)
                 .modifier(TextFieldClearButton(text: $contentValue))
                 .keyboardType(item.keyboardType)
