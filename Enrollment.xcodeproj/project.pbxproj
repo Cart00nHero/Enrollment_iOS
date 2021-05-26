@@ -19,6 +19,9 @@
 		AF3A99B0265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
 		AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
+		AF3A99BB265EB0A7006F7CF7 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BA265EB0A7006F7CF7 /* QRCodeView.swift */; };
+		AF3A99BD265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */; };
+		AF3A99BE265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */; };
 		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
 		AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
 		AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662926577AB4006DE4AB /* BeaconReceiver.swift */; };
@@ -83,6 +86,8 @@
 		AF0A296026591A10008F4E3A /* TabActionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabActionScenario.swift; sourceTree = "<group>"; };
 		AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoPicker.swift; sourceTree = "<group>"; };
 		AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolMan.swift; sourceTree = "<group>"; };
+		AF3A99BA265EB0A7006F7CF7 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScenario.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
 		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
 		AF54662C26577B56006DE4AB /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
@@ -235,6 +240,7 @@
 				AF72CE33265767770028C16B /* StartAppScenario.swift */,
 				AF5466602658C538006DE4AB /* WebViewScenario.swift */,
 				AF0A296026591A10008F4E3A /* TabActionScenario.swift */,
+				AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				AF5466262657748F006DE4AB /* iOSBrowserView.swift */,
 				AF54665926583DE8006DE4AB /* iOSTabView.swift */,
 				AF54665E2658C50F006DE4AB /* iOSWebView.swift */,
+				AF3A99BA265EB0A7006F7CF7 /* QRCodeView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -470,6 +477,7 @@
 				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
 				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				AF3A99BB265EB0A7006F7CF7 /* QRCodeView.swift in Sources */,
 				AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */,
 				AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
@@ -484,6 +492,7 @@
 				AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */,
 				AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */,
 				AF54662D26577B56006DE4AB /* Entities.swift in Sources */,
+				AF3A99BD265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */,
 				AF98720B265A4C51001209FA /* NewColors.swift in Sources */,
 				AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */,
@@ -510,6 +519,7 @@
 				AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF5466672658CAFD006DE4AB /* TabPageView.swift in Sources */,
 				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				AF3A99BE265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */,
 				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */,
