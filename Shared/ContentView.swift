@@ -35,10 +35,10 @@ struct ContentView: View {
                 .frame(width: 0.0, height: 0.0, alignment: .center)
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
                     Image("image_space_surise").resizable().aspectRatio(contentMode: .fill)
-                    Text("Even after the darkest nights, morning always comes.")
-                        .foregroundColor(golden(1.0))
-                        .font(.system(size: 24.0, weight: .heavy))
-                        .multilineTextAlignment(.center)
+//                    Text("Even after the darkest nights, morning always comes.")
+//                        .foregroundColor(golden(1.0))
+//                        .font(.system(size: 24.0, weight: .heavy))
+//                        .multilineTextAlignment(.center)
                 }
             }.navigationBarHidden(true)
             .onAppear() {

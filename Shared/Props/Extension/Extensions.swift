@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension String {
     func toEntity<T: Decodable>(to type: T.Type) -> T? {
@@ -85,4 +86,8 @@ extension URL {
             completion((response as? HTTPURLResponse)?.statusCode == 200)
         }.resume()
     }
+}
+
+func autoUISize(value: CGFloat) -> CGFloat {
+    return value * UIScreen.main.bounds.width/375.0
 }

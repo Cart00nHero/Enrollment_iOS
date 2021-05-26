@@ -10,15 +10,27 @@ import WebKit
 
 fileprivate let scenario = WebViewScenario()
 struct iOSWebView: View {
-    @State private var webUrl: URL = URL(string: "https://www.apple.com/")!
+    @State private var webUrl: URL = URL(string: "empty")!
     var body: some View {
         VStack {
-            SwiftUIWebView(url: $webUrl)
+            getDisplayView()
         }.navigationBarHidden(true)
         .onAppear() {
             scenario.beCollectFormUrl { formURL in
                 self.webUrl = formURL
             }
+        }
+    }
+    private func getDisplayView() -> AnyView {
+        if webUrl.absoluteString == "empty" {
+            return AnyView(
+                Text("尚未取得店家登記表格網址")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 24.0))
+                    .foregroundColor(golden(1.0))
+            )
+        } else {
+            return AnyView(SwiftUIWebView(url: $webUrl))
         }
     }
 }

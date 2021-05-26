@@ -22,7 +22,8 @@ class AdvertiserScenario: Actor {
     
     override init() {
         super.init()
-        if let storedJson = UserDefaults.standard.object(forKey: "visitor_info") as? String {
+        if let storedJson =
+            UserDefaults.standard.object(forKey: "visitor_info") as? String {
             visitor = storedJson.toEntity(to: VisitorInfo.self) ?? VisitorInfo()
         }
         beAdvertiser()
@@ -56,7 +57,7 @@ class AdvertiserScenario: Actor {
         _ complete:@escaping ([ListInputItem]) -> Void) {
         let source = [
             ListInputItem(
-                title: "姓名：",
+                title: "名稱：",
                 placeholder: "請輸入您的姓名",
                 keyboardType: .namePhonePad,
                 content: visitor.name
@@ -68,10 +69,9 @@ class AdvertiserScenario: Actor {
                 content: visitor.tel
             ),
             ListInputItem(
-                title: "身份證字號：",
-                placeholder: "請輸入您的身份證字號",
-                keyboardType: .asciiCapable,
-                content: visitor.identityNo
+                title: "其他資訊：",
+                placeholder: "請填入其他想預填訊息",
+                content: visitor.others
             )
         ]
         DispatchQueue.main.async {
@@ -85,7 +85,7 @@ class AdvertiserScenario: Actor {
         case 1:
             visitor.tel = value
         case 2:
-            visitor.identityNo = value
+            visitor.others = value
         default: break
         }
     }

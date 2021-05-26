@@ -28,7 +28,7 @@ struct RoleSelectionView: View {
                         active = false
                     }
                 }, label: {
-                    Text("我是店家").foregroundColor(golden(1.0))
+                    Text("我是受訪單位").foregroundColor(golden(1.0))
                 })
             }
         }.navigationBarHidden(true)

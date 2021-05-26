@@ -18,7 +18,7 @@ struct ListInputItem: Hashable {
 struct VisitorInfo: Convertable {
     var name = ""
     var tel = ""
-    var identityNo = ""
+    var others = ""
 }
 struct VisitedUnit: Convertable {
     var code = ""

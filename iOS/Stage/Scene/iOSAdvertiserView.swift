@@ -23,6 +23,9 @@ struct iOSAdvertiserView: View {
             List(dataSource.indexed(), id: \.1.self) { (idx, content) in
                 getListView(idx: idx)
             }
+            Text("填寫資料僅供快速填表用，App不會取用或散佈您的個資")
+                .font(.system(size: 12.0)).foregroundColor(pistachioGreen(1.0))
+            Spacer().frame(height: autoUISize(value: 100.0))
             Button(action: {
                 scenario.beGetDataSource { source in
                     if buttonTitle == "儲存" {
@@ -65,7 +68,7 @@ struct iOSAdvertiserView: View {
                 })
                 Spacer()
                 Text("角色變更於重新啟動App後選擇")
-                    .foregroundColor(skyBlue(1.0))
+                    .foregroundColor(pistachioGreen(1.0))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 14.0))
                 Spacer()

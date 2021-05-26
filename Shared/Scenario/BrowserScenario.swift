@@ -76,18 +76,18 @@ class BrowserScenario: Actor {
         let source = [
             ListInputItem(
                 title: "代碼：",
-                placeholder: "請輸入店家代號",
+                placeholder: "請輸入地點代號",
                 keyboardType: .asciiCapable,
                 content: visitedUnit.code
             ),
             ListInputItem(
-                title: "店家名稱：",
-                placeholder: "請輸店家名稱",
+                title: "名稱：",
+                placeholder: "請輸受訪單位名稱",
                 content: visitedUnit.name
             ),
             ListInputItem(
                 title: "表格網址：",
-                placeholder: "請輸入表格所在網址：",
+                placeholder: "請輸入雲端表格所在網址：",
                 keyboardType: .URL,
                 content: visitedUnit.cloudForm
             )
