@@ -24,18 +24,59 @@ class ToolMan: Actor {
             complete(newImage)
         }
     }
-    func temp() {
-        guard let image = UIImage(named: "图片名称") else {return}
-               
-       //jpeg格式 compressionQuality: 压缩质量
-        guard let imageData = image.jpegData(compressionQuality: 1) else {
-                   return
-          }
-       //png格式
-         guard let imageData2 = image.pngData() else {
-                   return
-               }
-        let base64ImageStr = imageData.base64EncodedString(options: .lineLength64Characters)
+    private func _beBase64ImageString(
+        sender: Actor,image: UIImage,
+        _ complete:@escaping(String) -> Void) {
+        /*
+         //jpeg格式 compressionQuality: 压缩质量
+         guard let imageData = image.jpegData(compressionQuality: 1) else {
+         return
+         }*/
+        //png格式
+        guard let imageData = image.pngData() else {
+            return
+        }
+        let base64ImageStr =
+            imageData.base64EncodedString(options: .lineLength64Characters)
+        sender.unsafeSend {
+            complete(base64ImageStr)
+        }
+    }
+    private func _beDecodeQrCode(
+        sender:Actor, image: UIImage,
+        _ complete:@escaping([String]) -> Void) {
+        var messages: [String] = []
+        if let features = detectQRCode(image), !features.isEmpty{
+            for case let row as CIQRCodeFeature in features{
+                let qrcodeMsg = row.messageString ?? ""
+                if !qrcodeMsg.isEmpty {
+                    messages.append(qrcodeMsg)
+                }
+            }
+            if messages.count > 0 {
+                sender.unsafeSend {
+                    complete(messages)
+                }
+            }
+        }
+    }
+    
+    private func detectQRCode(_ image: UIImage?) -> [CIFeature]? {
+        if let image = image, let ciImage = CIImage.init(image: image){
+            var options: [String: Any]
+            let context = CIContext()
+            options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+            let qrDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
+            if ciImage.properties.keys.contains((kCGImagePropertyOrientation as String)){
+                options = [CIDetectorImageOrientation: ciImage.properties[(kCGImagePropertyOrientation as String)] ?? 1]
+            } else {
+                options = [CIDetectorImageOrientation: 1]
+            }
+            let features = qrDetector?.features(in: ciImage, options: options)
+            return features
+            
+        }
+        return nil
     }
 }
 
@@ -47,6 +88,16 @@ extension ToolMan {
     @discardableResult
     public func beResizeImage(sender: Actor, image: UIImage, width: CGFloat, _ complete: @escaping (UIImage) -> Void) -> Self {
         unsafeSend { self._beResizeImage(sender: sender, image: image, width: width, complete) }
+        return self
+    }
+    @discardableResult
+    public func beBase64ImageString(sender: Actor, image: UIImage, _ complete: @escaping(String) -> Void) -> Self {
+        unsafeSend { self._beBase64ImageString(sender: sender, image: image, complete) }
+        return self
+    }
+    @discardableResult
+    public func beDecodeQrCode(sender: Actor, image: UIImage, _ complete: @escaping([String]) -> Void) -> Self {
+        unsafeSend { self._beDecodeQrCode(sender: sender, image: image, complete) }
         return self
     }
 
