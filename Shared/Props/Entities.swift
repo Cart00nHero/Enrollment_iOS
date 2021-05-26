@@ -24,6 +24,7 @@ struct VisitedUnit: Convertable {
     var code = ""
     var name = ""
     var cloudForm = ""
+    var qr_image = ""
 }
 
 struct TabPageItem {
