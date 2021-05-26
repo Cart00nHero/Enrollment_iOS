@@ -15,6 +15,10 @@
 		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
 		AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
 		AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
+		AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
+		AF3A99B0265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
+		AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
+		AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
 		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
 		AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
 		AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662926577AB4006DE4AB /* BeaconReceiver.swift */; };
@@ -77,6 +81,8 @@
 		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		AF0A296026591A10008F4E3A /* TabActionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabActionScenario.swift; sourceTree = "<group>"; };
+		AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoPicker.swift; sourceTree = "<group>"; };
+		AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolMan.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
 		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
 		AF54662C26577B56006DE4AB /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				AF54665626581533006DE4AB /* TextFieldClearButton.swift */,
 				AF5466652658CAFD006DE4AB /* TabPageView.swift */,
 				AF5466682658CC07006DE4AB /* SwiftUIWebView.swift */,
+				AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */,
 			);
 			path = Scenery;
 			sourceTree = "<group>";
@@ -307,6 +314,7 @@
 		AFCDEF1F265131C600DAC1E4 /* Actors */ = {
 			isa = PBXGroup;
 			children = (
+				AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */,
 				AF72CE0B26563B840028C16B /* P2P */,
 				AF72CDFC26552BCC0028C16B /* iBeacon */,
 				AFCDEF20265131FC00DAC1E4 /* Express */,
@@ -462,6 +470,7 @@
 				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
 				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
+				AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */,
 				AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
@@ -472,6 +481,7 @@
 				39AD1CBF265272BD002DCA0A /* Extensions.swift in Sources */,
 				AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
 				AF5466482657AAD5006DE4AB /* AppState.swift in Sources */,
+				AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */,
 				AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */,
 				AF54662D26577B56006DE4AB /* Entities.swift in Sources */,
 				AF98720B265A4C51001209FA /* NewColors.swift in Sources */,
@@ -492,6 +502,7 @@
 			files = (
 				AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */,
 				AF54663526578F10006DE4AB /* iOSListInputView.swift in Sources */,
+				AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */,
 				AF5466492657AAD5006DE4AB /* AppState.swift in Sources */,
 				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
@@ -506,6 +517,7 @@
 				AF54664F2657AFAE006DE4AB /* UIActions.swift in Sources */,
 				39AD1CC0265272BD002DCA0A /* Extensions.swift in Sources */,
 				AF72CE1026563BDE0028C16B /* PeerHost.swift in Sources */,
+				AF3A99B0265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */,
 				AFCDEF0F2651248D00DAC1E4 /* ContentView.swift in Sources */,
 				AF72CE1E265668290028C16B /* AdvertiserScenario.swift in Sources */,
 				AF98720C265A4C51001209FA /* NewColors.swift in Sources */,
@@ -638,9 +650,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = M34XUV83ZD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -651,7 +663,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = toon.town.party.visitor.enrollment;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -663,9 +675,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = M34XUV83ZD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -676,7 +688,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = toon.town.party.visitor.enrollment;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

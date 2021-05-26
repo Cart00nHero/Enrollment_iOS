@@ -28,7 +28,7 @@
 		<string>_visitor-record._udp</string>
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>防疫快登需要接收店家訊息，需要您同意App取用該權限，謝謝您！！</string>
+	<string>訪客登記App需要您同意取用該權限才能接受訊息，謝謝您！！</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
