@@ -18,14 +18,14 @@ struct iOSAdvertiserView: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height: spaceValue(50.0))
-            Divider().frame(height: 10.0)
+            Spacer().frame(height: autoUISize(50.0))
+            Divider().frame(height: 2.0)
             List(dataSource.indexed(), id: \.1.self) { (idx, content) in
                 getListView(idx: idx)
             }
             Text("填寫資料僅供快速填表用，App不會取用或散佈您的個資")
                 .font(.system(size: 12.0)).foregroundColor(pistachioGreen(1.0))
-            Spacer().frame(height: autoUISize(value: 100.0))
+            Spacer().frame(height: autoUISize(60.0))
             Button(action: {
                 scenario.beGetDataSource { source in
                     if buttonTitle == "儲存" {
@@ -39,7 +39,7 @@ struct iOSAdvertiserView: View {
             }, label: {
                 Text(buttonTitle).foregroundColor(flameScarlet(1.0))
             })
-            Spacer().frame(height: 10.0)
+            Spacer().frame(height: autoUISize(10.0))
             Divider().frame(height: 2.0)
             VStack{
                 Spacer().frame(height: 10.0)
@@ -96,6 +96,7 @@ struct iOSAdvertiserView: View {
         }
         .onDisappear() {
             scenario.beUnSubscribeRedux()
+            scenario.beStop()
         }
     }
     // MARK: - private methods
@@ -108,9 +109,6 @@ struct iOSAdvertiserView: View {
         let displayView =
             iOSListDisplayView(index: idx, item: .constant(dataSource[idx]))
         return AnyView(displayView)
-    }
-    private func spaceValue(_ origin: CGFloat) -> CGFloat {
-        return (origin * UIScreen.main.bounds.size.width / 375.0)
     }
 }
 

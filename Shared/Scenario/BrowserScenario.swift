@@ -14,9 +14,9 @@ import MultipeerConnectivity
 class BrowserScenario: Actor {
     // 登記人
     private var displayName = UIDevice.current.name
-    private let serviceType = "visitor-record"
     private var host: PeerHost?
     private var browser: PeerBrowser?
+    private let redux = ReduxActor()
     private var stateChanged: ((SceneState) -> Void)?
     private var invite_list: Set<MCPeerID> = []
     private lazy var visitedUnit = VisitedUnit()
@@ -30,23 +30,14 @@ class BrowserScenario: Actor {
         }
         beBrowser()
     }
-    private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
-        stateChanged = complete
-        appStore.subscribe(self) {
-            $0.select {
-                $0.sceneState
-            }
-        }
-    }
-    private func _beUnSubscribeRedux() {
-        appStore.unsubscribe(self)
-        stateChanged = nil
-    }
     private func _beBrowser() {
         if !visitedUnit.name.isEmpty {
             displayName = visitedUnit.name
         }
-        host = PeerHost(sender: self, peerName: displayName, serviceType: serviceType, encryption: .none)
+        host =
+            PeerHost(
+                sender: self, peerName: displayName,
+                serviceType: serviceType, encryption: .none)
         browser = PeerBrowser(
             sender: self, peerName: displayName, serviceType: serviceType)
     }
@@ -133,22 +124,34 @@ class BrowserScenario: Actor {
         }
         
     }
-}
-extension BrowserScenario: StoreSubscriber {
-    func newState(state: SceneState) {
-        switch state.currentAction {
-        case let action as ListTextFieldOnChangeAction:
-            beStoreUnitInfo(
-                index: action.index, value: action.newValue)
-        default: break
-        }
-        if stateChanged != nil {
-            DispatchQueue.main.async { [self] in
-                stateChanged!(state)
+    private func _beSubscribeRedux(
+        _ complete:@escaping (SceneState) -> Void) {
+        stateChanged = complete
+        redux.subscribeRedux { [self] state in
+            unsafeSend {
+                switch state.currentAction {
+                case let action as ListTextFieldOnChangeAction:
+                    beStoreUnitInfo(
+                        index: action.index, value: action.newValue)
+                case let action as GetBase64ImageAction:
+                    visitedUnit.qrB64Image = action.base64Image
+                    beSaveUnit()
+                default: break
+                }
+                if stateChanged != nil {
+                    DispatchQueue.main.async { [self] in
+                        stateChanged!(state)
+                    }
+                }
             }
         }
     }
+    private func _beUnSubscribeRedux() {
+        redux.unsubscribe()
+        stateChanged = nil
+    }
 }
+
 extension BrowserScenario: PeerHostProtocol,BrowserProtocol {
     // MARK: - PeerHostProtocol
     private func _beSession(peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -182,16 +185,6 @@ extension BrowserScenario: PeerHostProtocol,BrowserProtocol {
 
 extension BrowserScenario {
 
-    @discardableResult
-    public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
-        unsafeSend { self._beSubscribeRedux(complete) }
-        return self
-    }
-    @discardableResult
-    public func beUnSubscribeRedux() -> Self {
-        unsafeSend(_beUnSubscribeRedux)
-        return self
-    }
     @discardableResult
     public func beBrowser() -> Self {
         unsafeSend(_beBrowser)
@@ -230,6 +223,16 @@ extension BrowserScenario {
     @discardableResult
     public func beChangeRole(enable: Bool, _ complete: @escaping (String) -> Void) -> Self {
         unsafeSend { self._beChangeRole(enable: enable, complete) }
+        return self
+    }
+    @discardableResult
+    public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
+        unsafeSend { self._beSubscribeRedux(complete) }
+        return self
+    }
+    @discardableResult
+    public func beUnSubscribeRedux() -> Self {
+        unsafeSend(_beUnSubscribeRedux)
         return self
     }
     @discardableResult

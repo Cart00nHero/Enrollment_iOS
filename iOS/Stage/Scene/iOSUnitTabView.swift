@@ -1,25 +1,25 @@
 //
-//  iOSTabView.swift
+//  iOSUnitTabView.swift
 //  Enrollment (iOS)
 //
-//  Created by YuCheng on 2021/5/22.
+//  Created by YuCheng on 2021/5/27.
 //
 
 import SwiftUI
 
-struct iOSTabView: View {
+struct iOSUnitTabView: View {
     private let scenario = TabActionScenario()
     @State private var tabIndex = 0
     @State private var pages = [
         TabPageItem(
-            pageView: AnyView(iOSAdvertiserView()),
+            pageView: AnyView(iOSBrowserView()),
             tabImage: Image(systemName: "doc.text.magnifyingglass"),
             title: "資料"
         ),
         TabPageItem(
-            pageView: AnyView(iOSWebView()),
-            tabImage: Image(systemName: "network"),
-            title: "網頁"
+            pageView: AnyView(iOSQRCodeView()),
+            tabImage: Image(systemName: "qrcode.viewfinder"),
+            title: "QRCode"
         )
     ]
     var body: some View {
@@ -41,8 +41,8 @@ struct iOSTabView: View {
     }
 }
 
-struct iOSTabView_Previews: PreviewProvider {
+struct iOSUnitTabView_Previews: PreviewProvider {
     static var previews: some View {
-        iOSTabView()
+        iOSUnitTabView()
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import Flynn
 import ReSwift
+import SwiftUI
 
 class TabActionScenario: Actor {
     private var newStateEvent: ((SceneState) -> Void)?

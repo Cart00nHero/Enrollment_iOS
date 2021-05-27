@@ -22,13 +22,13 @@ struct ContentView: View {
                 }.hidden()
                 .frame(width: 0.0, height: 0.0, alignment: .center)
                 NavigationLink(
-                    destination: iOSTabView(),
+                    destination: iOSVisitorTabView(),
                     isActive: $activeVisitorUI) {
                     Text("")
                 }.hidden()
                 .frame(width: 0.0, height: 0.0, alignment: .center)
                 NavigationLink(
-                    destination: iOSBrowserView(),
+                    destination: iOSUnitTabView(),
                     isActive: $activeBrowser) {
                     Text("")
                 }.hidden()
@@ -46,6 +46,7 @@ struct ContentView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                    // Code you want to be delayed
                     scenario.beGetRoleOfUser { role in
+                        SingletonStorage.shared.currentRole = role
                         switch role {
                         case "Visitor":
                             self.activeVisitorUI = true

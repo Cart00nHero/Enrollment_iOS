@@ -7,6 +7,7 @@
 
 import Foundation
 import ReSwift
+import UIKit
 
 struct ListTextFieldOnChangeAction: Action {
     let index: Int
@@ -17,4 +18,7 @@ struct ReceivedInitationAction: Action {
 }
 struct OpenFormURLAction: Action {
     let urlString: String
+}
+struct GetPickerImageAction: Action {
+    let image: UIImage
 }
