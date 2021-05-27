@@ -33,7 +33,6 @@ class AdvertiserScenario: Actor {
         redux.subscribeRedux { [self] state in
             switch state.currentAction {
             case let action as ListTextFieldOnChangeAction:
-                print(action)
                 beStoreVisitorInfo(
                     index: action.index, value: action.newValue)
             default: break

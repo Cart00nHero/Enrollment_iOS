@@ -19,7 +19,7 @@ struct iOSUnitTabView: View {
         TabPageItem(
             pageView: AnyView(iOSQRCodeView()),
             tabImage: Image(systemName: "network"),
-            title: "網頁"
+            title: "QRCode"
         )
     ]
     var body: some View {

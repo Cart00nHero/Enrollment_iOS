@@ -8,7 +8,7 @@
 import Foundation
 import ReSwift
 
-struct UpdateQrCodeAction: Action {
+struct GetBase64ImageAction: Action {
     let base64Image: String
 }
 

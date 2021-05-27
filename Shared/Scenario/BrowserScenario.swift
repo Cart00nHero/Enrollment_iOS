@@ -16,6 +16,7 @@ class BrowserScenario: Actor {
     private var displayName = UIDevice.current.name
     private var host: PeerHost?
     private var browser: PeerBrowser?
+    private let redux = ReduxActor()
     private var stateChanged: ((SceneState) -> Void)?
     private var invite_list: Set<MCPeerID> = []
     private lazy var visitedUnit = VisitedUnit()
@@ -31,21 +32,35 @@ class BrowserScenario: Actor {
     }
     private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
         stateChanged = complete
-        appStore.subscribe(self) {
-            $0.select {
-                $0.sceneState
+        redux.subscribeRedux { [self] state in
+            switch state.currentAction {
+            case let action as ListTextFieldOnChangeAction:
+                beStoreUnitInfo(
+                    index: action.index, value: action.newValue)
+            case let action as GetBase64ImageAction:
+                visitedUnit.qrB64Image = action.base64Image
+                beSaveUnit()
+            default: break
+            }
+            if stateChanged != nil {
+                DispatchQueue.main.async { [self] in
+                    stateChanged!(state)
+                }
             }
         }
     }
     private func _beUnSubscribeRedux() {
-        appStore.unsubscribe(self)
+        redux.unsubscribe()
         stateChanged = nil
     }
     private func _beBrowser() {
         if !visitedUnit.name.isEmpty {
             displayName = visitedUnit.name
         }
-        host = PeerHost(sender: self, peerName: displayName, serviceType: serviceType, encryption: .none)
+        host =
+            PeerHost(
+                sender: self, peerName: displayName,
+                serviceType: serviceType, encryption: .none)
         browser = PeerBrowser(
             sender: self, peerName: displayName, serviceType: serviceType)
     }
@@ -133,21 +148,7 @@ class BrowserScenario: Actor {
         
     }
 }
-extension BrowserScenario: StoreSubscriber {
-    func newState(state: SceneState) {
-        switch state.currentAction {
-        case let action as ListTextFieldOnChangeAction:
-            beStoreUnitInfo(
-                index: action.index, value: action.newValue)
-        default: break
-        }
-        if stateChanged != nil {
-            DispatchQueue.main.async { [self] in
-                stateChanged!(state)
-            }
-        }
-    }
-}
+
 extension BrowserScenario: PeerHostProtocol,BrowserProtocol {
     // MARK: - PeerHostProtocol
     private func _beSession(peer peerID: MCPeerID, didChange state: MCSessionState) {

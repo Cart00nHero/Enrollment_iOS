@@ -11,7 +11,6 @@ fileprivate let scenario: QRCodeScenario = QRCodeScenario()
 struct iOSQRCodeView: View {
     @State private var presentPhotoLibrary = false
     @State private var selectedImage: UIImage = UIImage()
-    @State private var toggleTitle = ""
     @State private var isVisitor = true
     var body: some View {
         VStack {

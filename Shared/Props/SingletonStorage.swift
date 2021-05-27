@@ -11,7 +11,6 @@ import UIKit
 class SingletonStorage: NSObject {
     static let shared = SingletonStorage()
     var currentRole = ""
-    
 }
 
 let serviceType = "visitor-record"

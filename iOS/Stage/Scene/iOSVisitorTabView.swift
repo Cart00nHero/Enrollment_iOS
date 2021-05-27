@@ -20,6 +20,11 @@ struct iOSVisitorTabView: View {
             pageView: AnyView(iOSWebView()),
             tabImage: Image(systemName: "network"),
             title: "網頁"
+        ),
+        TabPageItem(
+            pageView: AnyView(iOSQRCodeView()),
+            tabImage: Image(systemName: "network"),
+            title: "QRCode"
         )
     ]
     var body: some View {
