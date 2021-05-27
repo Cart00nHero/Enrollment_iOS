@@ -16,7 +16,7 @@ struct iOSBrowserView: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height: autoUISize(value: autoUISize(value: 180.0)))
+            Spacer().frame(height: autoUISize(100.0))
             HStack {
                 Spacer().frame(width: 10.0)
                 Toggle(isOn: $toggleSwitchOn, label: {
@@ -62,6 +62,7 @@ struct iOSBrowserView: View {
                 .foregroundColor(pistachioGreen(1.0))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14.0))
+            Spacer()
         }.navigationBarHidden(true)
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .onAppear() {

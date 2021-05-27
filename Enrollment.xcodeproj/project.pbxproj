@@ -24,6 +24,8 @@
 		AF183836265F96CA00307E26 /* ReduxActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183834265F96CA00307E26 /* ReduxActor.swift */; };
 		AF183838265F9B6300307E26 /* SingletonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* SingletonStorage.swift */; };
 		AF183839265F9B6300307E26 /* SingletonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* SingletonStorage.swift */; };
+		AF18383B265FA58000307E26 /* iOSUnitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18383A265FA58000307E26 /* iOSUnitTabView.swift */; };
+		AF18383D265FA68800307E26 /* iOSVisitorTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18383C265FA68800307E26 /* iOSVisitorTabView.swift */; };
 		AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B0265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
@@ -47,7 +49,6 @@
 		AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF546654265812BE006DE4AB /* iOSBrowserListView.swift */; };
 		AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665626581533006DE4AB /* TextFieldClearButton.swift */; };
 		AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665626581533006DE4AB /* TextFieldClearButton.swift */; };
-		AF54665A26583DE8006DE4AB /* iOSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665926583DE8006DE4AB /* iOSTabView.swift */; };
 		AF54665F2658C50F006DE4AB /* iOSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54665E2658C50F006DE4AB /* iOSWebView.swift */; };
 		AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466602658C538006DE4AB /* WebViewScenario.swift */; };
 		AF5466662658CAFD006DE4AB /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466652658CAFD006DE4AB /* TabPageView.swift */; };
@@ -96,6 +97,8 @@
 		AF183831265F936F00307E26 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		AF183834265F96CA00307E26 /* ReduxActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxActor.swift; sourceTree = "<group>"; };
 		AF183837265F9B6300307E26 /* SingletonStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonStorage.swift; sourceTree = "<group>"; };
+		AF18383A265FA58000307E26 /* iOSUnitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSUnitTabView.swift; sourceTree = "<group>"; };
+		AF18383C265FA68800307E26 /* iOSVisitorTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSVisitorTabView.swift; sourceTree = "<group>"; };
 		AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoPicker.swift; sourceTree = "<group>"; };
 		AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolMan.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		AF5466502657C06F006DE4AB /* iOSListDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSListDisplayView.swift; sourceTree = "<group>"; };
 		AF546654265812BE006DE4AB /* iOSBrowserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserListView.swift; sourceTree = "<group>"; };
 		AF54665626581533006DE4AB /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
-		AF54665926583DE8006DE4AB /* iOSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTabView.swift; sourceTree = "<group>"; };
 		AF54665E2658C50F006DE4AB /* iOSWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSWebView.swift; sourceTree = "<group>"; };
 		AF5466602658C538006DE4AB /* WebViewScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScenario.swift; sourceTree = "<group>"; };
 		AF5466652658CAFD006DE4AB /* TabPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
@@ -325,9 +327,10 @@
 			children = (
 				AF72CE19265667C20028C16B /* iOSAdvertiserView.swift */,
 				AF5466262657748F006DE4AB /* iOSBrowserView.swift */,
-				AF54665926583DE8006DE4AB /* iOSTabView.swift */,
 				AF54665E2658C50F006DE4AB /* iOSWebView.swift */,
 				AF18382C265F702800307E26 /* iOSQRCodeView.swift */,
+				AF18383A265FA58000307E26 /* iOSUnitTabView.swift */,
+				AF18383C265FA68800307E26 /* iOSVisitorTabView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				AF183838265F9B6300307E26 /* SingletonStorage.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AF54664A2657AAD5006DE4AB /* AppReducer.swift in Sources */,
+				AF18383D265FA68800307E26 /* iOSVisitorTabView.swift in Sources */,
 				AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */,
 				AF72CE31265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */,
@@ -498,6 +502,7 @@
 				AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */,
 				AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
+				AF18383B265FA58000307E26 /* iOSUnitTabView.swift in Sources */,
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */,
 				AF18382F265F861700307E26 /* QRCodeScenario.swift in Sources */,
@@ -518,7 +523,6 @@
 				AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
 				AF183835265F96CA00307E26 /* ReduxActor.swift in Sources */,
-				AF54665A26583DE8006DE4AB /* iOSTabView.swift in Sources */,
 				AF54665F2658C50F006DE4AB /* iOSWebView.swift in Sources */,
 				AF54663426578F10006DE4AB /* iOSListInputView.swift in Sources */,
 			);

@@ -87,7 +87,3 @@ extension URL {
         }.resume()
     }
 }
-
-func autoUISize(value: CGFloat) -> CGFloat {
-    return value * UIScreen.main.bounds.width/375.0
-}
