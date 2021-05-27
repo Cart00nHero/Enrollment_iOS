@@ -12,3 +12,7 @@ struct GetBase64ImageAction: Action {
     let base64Image: String
 }
 
+struct SendUnitInfoAction: Action {
+    let info: VisitedUnit
+    
+}

@@ -14,14 +14,8 @@ class ToolMan: Actor {
     private func _beResizeImage(
         sender: Actor,image: UIImage, newSize: CGSize,
         _ complete: @escaping (UIImage) -> Void) {
-        let size = newSize
-        let renderer = UIGraphicsImageRenderer(size: size)
-        let newImage = renderer.image { (context) in
-            image.draw(in: renderer.format.bounds)
-        }
-        sender.unsafeSend {
-            complete(newImage)
-        }
+        let newImage = resizeImage(image: image, targetSize: newSize)
+        complete(newImage)
     }
     private func _beBase64ImageString(
         sender: Actor,image: UIImage,
@@ -77,13 +71,38 @@ class ToolMan: Actor {
         }
         return nil
     }
-    private func beBase64ToImage(
+    private func _beBase64ToImage(
         sender:Actor,strBase64: String,complete:@escaping (UIImage) -> Void) {
         let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
         guard let decodedimage = UIImage(data: dataDecoded) else { return }
         sender.unsafeSend {
             complete(decodedimage)
         }
+    }
+    private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }
 
@@ -105,6 +124,11 @@ extension ToolMan {
     @discardableResult
     public func beDecodeQrCode(sender: Actor, image: UIImage, _ complete: @escaping([String]) -> Void) -> Self {
         unsafeSend { self._beDecodeQrCode(sender: sender, image: image, complete) }
+        return self
+    }
+    @discardableResult
+    public func beBase64ToImage(sender: Actor, strBase64: String, complete: @escaping (UIImage) -> Void) -> Self {
+        unsafeSend { self._beBase64ToImage(sender: sender, strBase64: strBase64, complete: complete) }
         return self
     }
 

@@ -11,25 +11,71 @@ fileprivate let scenario: QRCodeScenario = QRCodeScenario()
 struct iOSQRCodeView: View {
     @State private var presentPhotoLibrary = false
     @State private var selectedImage: UIImage = UIImage()
-    @State private var isVisitor = true
+    @State private var qrMessage = "等待取得QRCode"
+    @State private var copyText: String = "Copy"
     var body: some View {
         VStack {
             Image(uiImage: selectedImage)
                 .resizable().scaledToFit()
             Divider()
+            chooseView()
+        }.navigationBarHidden(true)
+        .onAppear() {
+            scenario.beSubscribeRedux { newState in
+            }
+            if SingletonStorage.shared.currentRole == "Visitor" {
+                scenario.beSubscribeQRCode { image in
+                    selectedImage = image
+                    qrMessage = "掃描中..."
+                    scenario.beScanQrCode(image: selectedImage) { qrMsgs in
+                        qrMessage = qrMsgs.first ?? "No message here!!"
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $presentPhotoLibrary) {
+            SwiftUIPhotoPicker(
+                sourceType: .photoLibrary, selectedImage: $selectedImage)
+        }
+        .onDisappear() {
+            scenario.beUnSubscribe()
+        }
+    }
+    private func chooseView() -> AnyView {
+        let role = SingletonStorage.shared.currentRole
+        if role == "Visitor" {
+            return AnyView(
+                HStack {
+                    Spacer().frame(width: autoUISize(10.0))
+                    Text(qrMessage).foregroundColor(golden(1.0))
+                    Spacer()
+                    Button {
+                        if qrMessage != "等待取得QRCode" {
+                            UIPasteboard.general.string = qrMessage
+                            copyText = "Copied"
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                // Code you want to be delayed
+                                copyText = "Copy"
+                            }
+                        }
+                    } label: {
+                        Text(copyText)
+                            .foregroundColor(flameScarlet(1.0))
+                            .font(.system(size: autoFont(value: 16.0)))
+                    }
+                    Spacer().frame(width: autoUISize(10.0))
+                }
+            )
+        }
+        return AnyView(
             Button {
                 presentPhotoLibrary = true
             } label: {
                 Text("選取QRCode圖片")
                     .foregroundColor(flameScarlet(1.0))
             }
-        }.navigationBarHidden(true)
-        .onAppear() {
-        }
-        .sheet(isPresented: $presentPhotoLibrary) {
-            SwiftUIPhotoPicker(
-                sourceType: .photoLibrary, selectedImage: $selectedImage)
-        }
+        )
+        
     }
 }
 

@@ -28,26 +28,6 @@ class AdvertiserScenario: Actor {
         }
         beAdvertiser()
     }
-    private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
-        newStateEvent = complete
-        redux.subscribeRedux { [self] state in
-            switch state.currentAction {
-            case let action as ListTextFieldOnChangeAction:
-                beStoreVisitorInfo(
-                    index: action.index, value: action.newValue)
-            default: break
-            }
-            if newStateEvent != nil {
-                DispatchQueue.main.async {
-                    newStateEvent!(state)
-                }
-            }
-        }
-    }
-    private func _beUnSubscribeRedux() {
-        redux.unsubscribe()
-        newStateEvent = nil
-    }
     private func _beAdvertiser() {
         if !visitor.name.isEmpty {
             displayName = visitor.name
@@ -124,6 +104,28 @@ class AdvertiserScenario: Actor {
         }
         
     }
+    private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
+        newStateEvent = complete
+        redux.subscribeRedux { [self] state in
+            unsafeSend {
+                switch state.currentAction {
+                case let action as ListTextFieldOnChangeAction:
+                    beStoreVisitorInfo(
+                        index: action.index, value: action.newValue)
+                default: break
+                }
+                if newStateEvent != nil {
+                    DispatchQueue.main.async {
+                        newStateEvent!(state)
+                    }
+                }
+            }
+        }
+    }
+    private func _beUnSubscribeRedux() {
+        redux.unsubscribe()
+        newStateEvent = nil
+    }
     // MARK: - private
     private func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
         return [
@@ -170,6 +172,10 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
         if context != nil {
             let json = String(data: context!, encoding: .utf8)
             guard let unitInfo: VisitedUnit = json?.toEntity(to: VisitedUnit.self) else { return }
+            if !unitInfo.qrB64Image.isEmpty {
+                Courier().beApplyExpress(
+                    sender: self, recipient: "QRCodeScenario", content: unitInfo, nil)
+            }
             let result = converToFormDatoSources(content: unitInfo)
             appStore.dispatch(ReceivedInitationAction(source: result))
         }
@@ -181,16 +187,6 @@ extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
 
 extension AdvertiserScenario {
 
-    @discardableResult
-    public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
-        unsafeSend { self._beSubscribeRedux(complete) }
-        return self
-    }
-    @discardableResult
-    public func beUnSubscribeRedux() -> Self {
-        unsafeSend(_beUnSubscribeRedux)
-        return self
-    }
     @discardableResult
     public func beAdvertiser() -> Self {
         unsafeSend(_beAdvertiser)
@@ -224,6 +220,16 @@ extension AdvertiserScenario {
     @discardableResult
     public func beChangeRole(enable: Bool, _ complete: @escaping (String) -> Void) -> Self {
         unsafeSend { self._beChangeRole(enable: enable, complete) }
+        return self
+    }
+    @discardableResult
+    public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
+        unsafeSend { self._beSubscribeRedux(complete) }
+        return self
+    }
+    @discardableResult
+    public func beUnSubscribeRedux() -> Self {
+        unsafeSend(_beUnSubscribeRedux)
         return self
     }
     @discardableResult

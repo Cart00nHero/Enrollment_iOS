@@ -30,29 +30,6 @@ class BrowserScenario: Actor {
         }
         beBrowser()
     }
-    private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
-        stateChanged = complete
-        redux.subscribeRedux { [self] state in
-            switch state.currentAction {
-            case let action as ListTextFieldOnChangeAction:
-                beStoreUnitInfo(
-                    index: action.index, value: action.newValue)
-            case let action as GetBase64ImageAction:
-                visitedUnit.qrB64Image = action.base64Image
-                beSaveUnit()
-            default: break
-            }
-            if stateChanged != nil {
-                DispatchQueue.main.async { [self] in
-                    stateChanged!(state)
-                }
-            }
-        }
-    }
-    private func _beUnSubscribeRedux() {
-        redux.unsubscribe()
-        stateChanged = nil
-    }
     private func _beBrowser() {
         if !visitedUnit.name.isEmpty {
             displayName = visitedUnit.name
@@ -147,6 +124,32 @@ class BrowserScenario: Actor {
         }
         
     }
+    private func _beSubscribeRedux(
+        _ complete:@escaping (SceneState) -> Void) {
+        stateChanged = complete
+        redux.subscribeRedux { [self] state in
+            unsafeSend {
+                switch state.currentAction {
+                case let action as ListTextFieldOnChangeAction:
+                    beStoreUnitInfo(
+                        index: action.index, value: action.newValue)
+                case let action as GetBase64ImageAction:
+                    visitedUnit.qrB64Image = action.base64Image
+                    beSaveUnit()
+                default: break
+                }
+                if stateChanged != nil {
+                    DispatchQueue.main.async { [self] in
+                        stateChanged!(state)
+                    }
+                }
+            }
+        }
+    }
+    private func _beUnSubscribeRedux() {
+        redux.unsubscribe()
+        stateChanged = nil
+    }
 }
 
 extension BrowserScenario: PeerHostProtocol,BrowserProtocol {
@@ -182,16 +185,6 @@ extension BrowserScenario: PeerHostProtocol,BrowserProtocol {
 
 extension BrowserScenario {
 
-    @discardableResult
-    public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
-        unsafeSend { self._beSubscribeRedux(complete) }
-        return self
-    }
-    @discardableResult
-    public func beUnSubscribeRedux() -> Self {
-        unsafeSend(_beUnSubscribeRedux)
-        return self
-    }
     @discardableResult
     public func beBrowser() -> Self {
         unsafeSend(_beBrowser)
@@ -230,6 +223,16 @@ extension BrowserScenario {
     @discardableResult
     public func beChangeRole(enable: Bool, _ complete: @escaping (String) -> Void) -> Self {
         unsafeSend { self._beChangeRole(enable: enable, complete) }
+        return self
+    }
+    @discardableResult
+    public func beSubscribeRedux(_ complete: @escaping (SceneState) -> Void) -> Self {
+        unsafeSend { self._beSubscribeRedux(complete) }
+        return self
+    }
+    @discardableResult
+    public func beUnSubscribeRedux() -> Self {
+        unsafeSend(_beUnSubscribeRedux)
         return self
     }
     @discardableResult

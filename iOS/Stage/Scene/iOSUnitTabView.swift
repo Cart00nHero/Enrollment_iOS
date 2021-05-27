@@ -18,7 +18,7 @@ struct iOSUnitTabView: View {
         ),
         TabPageItem(
             pageView: AnyView(iOSQRCodeView()),
-            tabImage: Image(systemName: "network"),
+            tabImage: Image(systemName: "qrcode.viewfinder"),
             title: "QRCode"
         )
     ]

@@ -11,14 +11,12 @@ import Flynn
 class RoleSelectionScenario: Actor {
     private func _beActVisitor(_ complete:@escaping () -> Void) {
         UserDefaults.standard.setValue("Visitor", forKey: "role_of_user")
-        SingletonStorage.shared.currentRole = "Visitor"
         DispatchQueue.main.async {
             complete()
         }
     }
     private func _beVisitedUnit(_ complete:@escaping () -> Void) {
         UserDefaults.standard.setValue("Visited_Unit", forKey: "role_of_user")
-        SingletonStorage.shared.currentRole = "Visited_Unit"
         DispatchQueue.main.async {
             complete()
         }

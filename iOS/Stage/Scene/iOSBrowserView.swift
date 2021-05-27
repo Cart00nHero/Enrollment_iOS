@@ -80,8 +80,7 @@ struct iOSBrowserView: View {
             }
         }
         .onDisappear() {
-            scenario.beUnSubscribeRedux()
-            scenario.beStop()
+            toggleSwitchOn = false
         }
     }
     

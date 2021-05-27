@@ -45,6 +45,7 @@ struct SwiftUIPhotoPicker: UIViewControllerRepresentable {
             
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 parent.selectedImage = image
+                appStore.dispatch(GetPickerImageAction(image: image))
             }
             parent.presentationMode.wrappedValue.dismiss()
         }
