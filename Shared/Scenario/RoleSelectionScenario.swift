@@ -10,7 +10,7 @@ import Flynn
 
 class RoleSelectionScenario: Actor {
     private func _beActVisitor(_ complete:@escaping () -> Void) {
-        UserDefaults.standard.setValue("Visitor", forKey: "role_of_user")
+        UserDefaults.standard.setValue("c", forKey: "role_of_user")
         DispatchQueue.main.async {
             complete()
         }

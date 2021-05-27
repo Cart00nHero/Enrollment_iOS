@@ -15,11 +15,11 @@
 		39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AD1CC8265276DE002DCA0A /* DataConverter.swift */; };
 		AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
 		AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
+		AF18382D265F702800307E26 /* iOSQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18382C265F702800307E26 /* iOSQRCodeView.swift */; };
 		AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B0265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
 		AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
-		AF3A99BB265EB0A7006F7CF7 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BA265EB0A7006F7CF7 /* QRCodeView.swift */; };
 		AF3A99BD265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */; };
 		AF3A99BE265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */; };
 		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
@@ -68,6 +68,7 @@
 		AF72CE35265767770028C16B /* StartAppScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE33265767770028C16B /* StartAppScenario.swift */; };
 		AF98720B265A4C51001209FA /* NewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98720A265A4C51001209FA /* NewColors.swift */; };
 		AF98720C265A4C51001209FA /* NewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98720A265A4C51001209FA /* NewColors.swift */; };
+		AFC97C7C265F6BE500D1980D /* DynamicTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC97C7B265F6BE500D1980D /* DynamicTabView.swift */; };
 		AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */; };
 		AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */; };
@@ -84,9 +85,9 @@
 		39AD1CBC265272BD002DCA0A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		AF0A296026591A10008F4E3A /* TabActionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabActionScenario.swift; sourceTree = "<group>"; };
+		AF18382C265F702800307E26 /* iOSQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSQRCodeView.swift; sourceTree = "<group>"; };
 		AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoPicker.swift; sourceTree = "<group>"; };
 		AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolMan.swift; sourceTree = "<group>"; };
-		AF3A99BA265EB0A7006F7CF7 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScenario.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
 		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionScenario.swift; sourceTree = "<group>"; };
 		AF72CE33265767770028C16B /* StartAppScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppScenario.swift; sourceTree = "<group>"; };
 		AF98720A265A4C51001209FA /* NewColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewColors.swift; sourceTree = "<group>"; };
+		AFC97C7B265F6BE500D1980D /* DynamicTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTabView.swift; sourceTree = "<group>"; };
 		AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentApp.swift; sourceTree = "<group>"; };
 		AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				AF5466652658CAFD006DE4AB /* TabPageView.swift */,
 				AF5466682658CC07006DE4AB /* SwiftUIWebView.swift */,
 				AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */,
+				AFC97C7B265F6BE500D1980D /* DynamicTabView.swift */,
 			);
 			path = Scenery;
 			sourceTree = "<group>";
@@ -313,7 +316,7 @@
 				AF5466262657748F006DE4AB /* iOSBrowserView.swift */,
 				AF54665926583DE8006DE4AB /* iOSTabView.swift */,
 				AF54665E2658C50F006DE4AB /* iOSWebView.swift */,
-				AF3A99BA265EB0A7006F7CF7 /* QRCodeView.swift */,
+				AF18382C265F702800307E26 /* iOSQRCodeView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			files = (
 				AF72CE22265670EC0028C16B /* BrowserScenario.swift in Sources */,
 				AF72CE34265767770028C16B /* StartAppScenario.swift in Sources */,
+				AFC97C7C265F6BE500D1980D /* DynamicTabView.swift in Sources */,
 				AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
@@ -475,9 +479,9 @@
 				AF72CE31265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */,
 				AF72CE1D265668290028C16B /* AdvertiserScenario.swift in Sources */,
+				AF18382D265F702800307E26 /* iOSQRCodeView.swift in Sources */,
 				AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */,
 				AF72CE1126563BDE0028C16B /* PeerBrowser.swift in Sources */,
-				AF3A99BB265EB0A7006F7CF7 /* QRCodeView.swift in Sources */,
 				AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */,
 				AF546655265812BE006DE4AB /* iOSBrowserListView.swift in Sources */,
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,

@@ -27,8 +27,16 @@ struct VisitedUnit: Convertable {
     var qr_image = ""
 }
 
-struct TabPageItem {
+struct TabPageItem: Identifiable {
+    let id = UUID()
     let pageView: AnyView
     var tabImage: Image = Image(systemName: "bubble.left")
     var title = ""
+}
+
+class TabDynamicSource: ObservableObject {
+    @Published var pages: [TabPageItem] = []
+    func reloadTab(newPages:[TabPageItem]) {
+        pages = newPages
+    }
 }

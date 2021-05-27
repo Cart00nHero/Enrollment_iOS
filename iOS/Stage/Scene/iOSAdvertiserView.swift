@@ -96,6 +96,7 @@ struct iOSAdvertiserView: View {
         }
         .onDisappear() {
             scenario.beUnSubscribeRedux()
+            scenario.beStop()
         }
     }
     // MARK: - private methods

@@ -13,6 +13,14 @@ class QRCodeScenario: Actor {
     
     private lazy var visitedUnit: VisitedUnit = VisitedUnit()
     
+    private func _beCurrentRole(_ complete:@escaping(String) -> Void) {
+        let role: String =
+            UserDefaults.standard.object(forKey: "role_of_user") as? String ?? ""
+        DispatchQueue.main.async {
+            complete(role)
+        }
+    }
+    
     private func _beCollectParcel() {
         Courier().beClaim(recipient: self) { [self] pSet in
             for parcel in pSet {
@@ -38,7 +46,8 @@ class QRCodeScenario: Actor {
             RunLoop.current.run(until: Date())
         }
         ToolMan().beBase64ImageString(
-            sender: self, image: selectedImd) { imageString in
+            sender: self, image: selectedImd) { [self] imageString in
+            visitedUnit.qr_image = imageString
         }
     }
 }

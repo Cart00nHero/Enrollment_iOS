@@ -11,7 +11,6 @@ struct ContentView: View {
     private let scenario = StartAppScenario()
     @State var activeRoleSelection = false
     @State var activeVisitorUI = false
-    @State var activeBrowser = false
     var body: some View {
         NavigationView {
             VStack {
@@ -27,11 +26,6 @@ struct ContentView: View {
                     Text("")
                 }.hidden()
                 .frame(width: 0.0, height: 0.0, alignment: .center)
-                NavigationLink(
-                    destination: iOSBrowserView(),
-                    isActive: $activeBrowser) {
-                    Text("")
-                }.hidden()
                 .frame(width: 0.0, height: 0.0, alignment: .center)
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
                     Image("image_space_surise").resizable().aspectRatio(contentMode: .fill)
@@ -46,13 +40,10 @@ struct ContentView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                    // Code you want to be delayed
                     scenario.beGetRoleOfUser { role in
-                        switch role {
-                        case "Visitor":
-                            self.activeVisitorUI = true
-                        case "Visited_Unit":
-                            self.activeBrowser = true
-                        default:
-                            self.activeRoleSelection = true
+                        if role.isEmpty {
+                            activeRoleSelection = true
+                        } else {
+                            activeVisitorUI = true
                         }
                     }
                 }
