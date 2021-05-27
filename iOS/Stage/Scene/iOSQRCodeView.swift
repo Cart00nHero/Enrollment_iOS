@@ -11,18 +11,10 @@ fileprivate let scenario: QRCodeScenario = QRCodeScenario()
 struct iOSQRCodeView: View {
     @State private var presentPhotoLibrary = false
     @State private var selectedImage: UIImage = UIImage()
-    @State private var toggleSwitchOn = false
+    @State private var toggleTitle = ""
+    @State private var isVisitor = true
     var body: some View {
         VStack {
-            Toggle(isOn: $toggleSwitchOn) {
-                Text("")
-            }.onChange(of: toggleSwitchOn) { isOn in
-                if isOn {
-                    print("送")
-                } else {
-                    print("停")
-                }
-            }
             Image(uiImage: selectedImage)
                 .resizable().scaledToFit()
             Divider()
@@ -32,8 +24,8 @@ struct iOSQRCodeView: View {
                 Text("選取QRCode圖片")
                     .foregroundColor(flameScarlet(1.0))
             }
-        }.onAppear() {
-            scenario.beCollectParcel()
+        }.navigationBarHidden(true)
+        .onAppear() {
         }
         .sheet(isPresented: $presentPhotoLibrary) {
             SwiftUIPhotoPicker(

@@ -16,12 +16,18 @@
 		AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
 		AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0A296026591A10008F4E3A /* TabActionScenario.swift */; };
 		AF18382D265F702800307E26 /* iOSQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18382C265F702800307E26 /* iOSQRCodeView.swift */; };
+		AF18382F265F861700307E26 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18382E265F861700307E26 /* QRCodeScenario.swift */; };
+		AF183830265F861700307E26 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18382E265F861700307E26 /* QRCodeScenario.swift */; };
+		AF183832265F936F00307E26 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183831265F936F00307E26 /* AppActions.swift */; };
+		AF183833265F936F00307E26 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183831265F936F00307E26 /* AppActions.swift */; };
+		AF183835265F96CA00307E26 /* ReduxActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183834265F96CA00307E26 /* ReduxActor.swift */; };
+		AF183836265F96CA00307E26 /* ReduxActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183834265F96CA00307E26 /* ReduxActor.swift */; };
+		AF183838265F9B6300307E26 /* SingletonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* SingletonStorage.swift */; };
+		AF183839265F9B6300307E26 /* SingletonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* SingletonStorage.swift */; };
 		AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B0265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
 		AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
 		AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */; };
-		AF3A99BD265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */; };
-		AF3A99BE265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */; };
 		AF5466272657748F006DE4AB /* iOSBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5466262657748F006DE4AB /* iOSBrowserView.swift */; };
 		AF54662826577644006DE4AB /* RoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */; };
 		AF54662A26577AB4006DE4AB /* BeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54662926577AB4006DE4AB /* BeaconReceiver.swift */; };
@@ -86,9 +92,12 @@
 		39AD1CC8265276DE002DCA0A /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
 		AF0A296026591A10008F4E3A /* TabActionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabActionScenario.swift; sourceTree = "<group>"; };
 		AF18382C265F702800307E26 /* iOSQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSQRCodeView.swift; sourceTree = "<group>"; };
+		AF18382E265F861700307E26 /* QRCodeScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScenario.swift; sourceTree = "<group>"; };
+		AF183831265F936F00307E26 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
+		AF183834265F96CA00307E26 /* ReduxActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxActor.swift; sourceTree = "<group>"; };
+		AF183837265F9B6300307E26 /* SingletonStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonStorage.swift; sourceTree = "<group>"; };
 		AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoPicker.swift; sourceTree = "<group>"; };
 		AF3A99B7265E9D60006F7CF7 /* ToolMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolMan.swift; sourceTree = "<group>"; };
-		AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScenario.swift; sourceTree = "<group>"; };
 		AF5466262657748F006DE4AB /* iOSBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBrowserView.swift; sourceTree = "<group>"; };
 		AF54662926577AB4006DE4AB /* BeaconReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconReceiver.swift; sourceTree = "<group>"; };
 		AF54662C26577B56006DE4AB /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
@@ -153,6 +162,7 @@
 				39AD1CBA265272BD002DCA0A /* Extension */,
 				AF54662C26577B56006DE4AB /* Entities.swift */,
 				AF98720A265A4C51001209FA /* NewColors.swift */,
+				AF183837265F9B6300307E26 /* SingletonStorage.swift */,
 			);
 			path = Props;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				AF54664D2657AFAE006DE4AB /* UIActions.swift */,
+				AF183831265F936F00307E26 /* AppActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -243,7 +254,7 @@
 				AF72CE33265767770028C16B /* StartAppScenario.swift */,
 				AF5466602658C538006DE4AB /* WebViewScenario.swift */,
 				AF0A296026591A10008F4E3A /* TabActionScenario.swift */,
-				AF3A99BC265EB6DB006F7CF7 /* QRCodeScenario.swift */,
+				AF18382E265F861700307E26 /* QRCodeScenario.swift */,
 			);
 			path = Scenario;
 			sourceTree = "<group>";
@@ -329,6 +340,7 @@
 				AF72CDFC26552BCC0028C16B /* iBeacon */,
 				AFCDEF20265131FC00DAC1E4 /* Express */,
 				39AD1CC8265276DE002DCA0A /* DataConverter.swift */,
+				AF183834265F96CA00307E26 /* ReduxActor.swift */,
 			);
 			path = Actors;
 			sourceTree = "<group>";
@@ -473,6 +485,7 @@
 				AFC97C7C265F6BE500D1980D /* DynamicTabView.swift in Sources */,
 				AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
+				AF183838265F9B6300307E26 /* SingletonStorage.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AF54664A2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AF72CE2B26575FB80028C16B /* RoleSelectionView.swift in Sources */,
@@ -487,6 +500,7 @@
 				39AD1CBD265272BD002DCA0A /* IndexedCollection.swift in Sources */,
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */,
+				AF18382F265F861700307E26 /* QRCodeScenario.swift in Sources */,
 				AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				AF5466692658CC07006DE4AB /* SwiftUIWebView.swift in Sources */,
 				AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */,
@@ -496,13 +510,14 @@
 				AF3A99B8265E9D60006F7CF7 /* ToolMan.swift in Sources */,
 				AF72CE1A265667C20028C16B /* iOSAdvertiserView.swift in Sources */,
 				AF54662D26577B56006DE4AB /* Entities.swift in Sources */,
-				AF3A99BD265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */,
 				AF98720B265A4C51001209FA /* NewColors.swift in Sources */,
 				AF72CDFE26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */,
+				AF183832265F936F00307E26 /* AppActions.swift in Sources */,
 				AF5466662658CAFD006DE4AB /* TabPageView.swift in Sources */,
 				AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
+				AF183835265F96CA00307E26 /* ReduxActor.swift in Sources */,
 				AF54665A26583DE8006DE4AB /* iOSTabView.swift in Sources */,
 				AF54665F2658C50F006DE4AB /* iOSWebView.swift in Sources */,
 				AF54663426578F10006DE4AB /* iOSListInputView.swift in Sources */,
@@ -516,6 +531,7 @@
 				AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */,
 				AF54663526578F10006DE4AB /* iOSListInputView.swift in Sources */,
 				AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */,
+				AF183836265F96CA00307E26 /* ReduxActor.swift in Sources */,
 				AF5466492657AAD5006DE4AB /* AppState.swift in Sources */,
 				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
@@ -523,7 +539,7 @@
 				AF0A296226591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF5466672658CAFD006DE4AB /* TabPageView.swift in Sources */,
 				AF72CE1226563BDE0028C16B /* PeerBrowser.swift in Sources */,
-				AF3A99BE265EB6DB006F7CF7 /* QRCodeScenario.swift in Sources */,
+				AF183830265F861700307E26 /* QRCodeScenario.swift in Sources */,
 				AF72CE1426563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				39AD1CCA265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665826581533006DE4AB /* TextFieldClearButton.swift in Sources */,
@@ -537,11 +553,13 @@
 				AF98720C265A4C51001209FA /* NewColors.swift in Sources */,
 				AF54664B2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
+				AF183839265F9B6300307E26 /* SingletonStorage.swift in Sources */,
 				AF54666A2658CC07006DE4AB /* SwiftUIWebView.swift in Sources */,
 				AF54662B26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
 				AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */,
 				39AD1CBE265272BD002DCA0A /* IndexedCollection.swift in Sources */,
 				AF72CE35265767770028C16B /* StartAppScenario.swift in Sources */,
+				AF183833265F936F00307E26 /* AppActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,8 +682,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = M34XUV83ZD;
 				ENABLE_PREVIEWS = YES;
@@ -677,7 +695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
-				PROVISIONING_PROFILE_SPECIFIER = toon.town.party.visitor.enrollment;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -689,8 +707,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = M34XUV83ZD;
 				ENABLE_PREVIEWS = YES;
@@ -702,7 +720,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
-				PROVISIONING_PROFILE_SPECIFIER = toon.town.party.visitor.enrollment;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

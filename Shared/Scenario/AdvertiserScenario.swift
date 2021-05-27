@@ -14,11 +14,11 @@ import MultipeerConnectivity
 class AdvertiserScenario: Actor {
     // 訪客
     private var displayName = UIDevice.current.name
-    private let serviceType = "visitor-record"
     private var host: PeerHost?
     private var advertiser: PeerAdvertiser?
     private var newStateEvent: ((SceneState) -> Void)?
     private lazy var visitor = VisitorInfo()
+    private let redux = ReduxActor()
     
     override init() {
         super.init()
@@ -30,14 +30,23 @@ class AdvertiserScenario: Actor {
     }
     private func _beSubscribeRedux(_ complete:@escaping (SceneState) -> Void) {
         newStateEvent = complete
-        appStore.subscribe(self) {
-            $0.select {
-                $0.sceneState
+        redux.subscribeRedux { [self] state in
+            switch state.currentAction {
+            case let action as ListTextFieldOnChangeAction:
+                print(action)
+                beStoreVisitorInfo(
+                    index: action.index, value: action.newValue)
+            default: break
+            }
+            if newStateEvent != nil {
+                DispatchQueue.main.async {
+                    newStateEvent!(state)
+                }
             }
         }
     }
     private func _beUnSubscribeRedux() {
-        appStore.unsubscribe(self)
+        redux.unsubscribe()
         newStateEvent = nil
     }
     private func _beAdvertiser() {
@@ -139,24 +148,7 @@ class AdvertiserScenario: Actor {
         ]
     }
 }
-extension AdvertiserScenario: StoreSubscriber {
-    func newState(state: SceneState) {
-        unsafeSend { [self] in
-            switch state.currentAction {
-            case let action as ListTextFieldOnChangeAction:
-                print(action)
-                beStoreVisitorInfo(
-                    index: action.index, value: action.newValue)
-            default: break
-            }
-            if newStateEvent != nil {
-                DispatchQueue.main.async {
-                    newStateEvent!(state)
-                }
-            }
-        }
-    }
-}
+
 extension AdvertiserScenario: PeerHostProtocol, AdvertiserProtocol {
     // MARK: - PeerHostProtocol
     private func _beSession(peer peerID: MCPeerID, didChange state: MCSessionState) {

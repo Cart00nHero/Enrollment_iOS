@@ -14,7 +14,6 @@ import MultipeerConnectivity
 class BrowserScenario: Actor {
     // 登記人
     private var displayName = UIDevice.current.name
-    private let serviceType = "visitor-record"
     private var host: PeerHost?
     private var browser: PeerBrowser?
     private var stateChanged: ((SceneState) -> Void)?

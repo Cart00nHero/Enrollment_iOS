@@ -25,7 +25,7 @@ struct iOSAdvertiserView: View {
             }
             Text("填寫資料僅供快速填表用，App不會取用或散佈您的個資")
                 .font(.system(size: 12.0)).foregroundColor(pistachioGreen(1.0))
-            Spacer().frame(height: autoUISize(value: 100.0))
+            Spacer().frame(height: autoUISize(value: 80.0))
             Button(action: {
                 scenario.beGetDataSource { source in
                     if buttonTitle == "儲存" {
