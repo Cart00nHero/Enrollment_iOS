@@ -22,3 +22,6 @@ struct OpenFormURLAction: Action {
 struct GetPickerImageAction: Action {
     let image: UIImage
 }
+struct SwitchTabAction: Action {
+    let tabIndex: Int
+}

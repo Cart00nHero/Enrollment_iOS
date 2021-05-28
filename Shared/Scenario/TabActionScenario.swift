@@ -11,36 +11,28 @@ import ReSwift
 import SwiftUI
 
 class TabActionScenario: Actor {
-    private var newStateEvent: ((SceneState) -> Void)?
+    private let redux = ReduxActor()
     private func _beSubscribeRedux(
         _ complete:@escaping (SceneState) -> Void) {
-        newStateEvent = complete
-        appStore.subscribe(self) {
-            $0.select {
-                $0.sceneState
+        redux.subscribeRedux { [self] state in
+            unsafeSend {
+                switch state.currentAction {
+                case let action as OpenFormURLAction:
+                    Courier().beApplyExpress(sender: self, recipient: "WebViewScenario", content: action.urlString) { _ in
+                        DispatchQueue.main.async {
+                            complete(state)
+                        }
+                    }
+                default:
+                    DispatchQueue.main.async {
+                        complete(state)
+                    }
+                }
             }
         }
     }
     private func _beUnSubscribeRedux() {
-        appStore.unsubscribe(self)
-        newStateEvent = nil
-    }
-}
-extension TabActionScenario: StoreSubscriber {
-    func newState(state: SceneState) {
-        unsafeSend { [self] in
-            switch state.currentAction {
-            case let action as OpenFormURLAction:
-                Courier().beApplyExpress(sender: self, recipient: "WebViewScenario", content: action.urlString) { _ in
-                    if newStateEvent != nil {
-                        DispatchQueue.main.async {
-                            newStateEvent!(state)
-                        }
-                    }
-                }
-            default: break
-            }
-        }
+        redux.unsubscribe()
     }
 }
 

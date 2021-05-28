@@ -29,6 +29,8 @@ struct iOSUnitTabView: View {
         }.onAppear() {
             scenario.beSubscribeRedux { newState in
                 switch newState.currentAction {
+                case let action as SwitchTabAction:
+                    tabIndex = action.tabIndex
                 case is OpenFormURLAction:
                     tabIndex = 1
                 default: break

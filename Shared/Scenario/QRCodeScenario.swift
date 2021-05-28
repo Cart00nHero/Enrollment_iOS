@@ -58,8 +58,9 @@ class QRCodeScenario: Actor {
             qrURL.isReachable { reachable in
                 if reachable {
                     Courier().beApplyExpress(
-                        sender: self,
-                        recipient: "WebViewScenario", content: qrURL, nil)
+                        sender: self, recipient: "WebViewScenario", content: qrURL) { _ in
+                        appStore.dispatch(SwitchTabAction(tabIndex: 1))
+                    }
                     return
                 }
                 DispatchQueue.main.async {
