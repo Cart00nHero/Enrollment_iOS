@@ -13,17 +13,24 @@ class WebViewScenario: Actor {
     private func _beCollectFormUrl(_ complete:@escaping (URL) -> Void) {
         Courier().beClaim(recipient: self) { pSet in
             for parcel in pSet {
-                guard let parcel = parcel as? Parcel<String> else { return }
-                let formURL = URL(string: parcel.content)
-                formURL?.isReachable(completion: { success in
-                    if success {
-                        DispatchQueue.main.async {
-                            complete(formURL!)
+                if let parcel = parcel as? Parcel<String> {
+                    let formURL = URL(string: parcel.content)
+                    formURL?.isReachable(completion: { success in
+                        if success {
+                            DispatchQueue.main.async {
+                                complete(formURL!)
+                            }
+                        } else {
+                            print("不是網址捏")
                         }
-                    } else {
-                        print("幹啦")
+                    })
+                    return
+                }
+                if let parcel = parcel as? Parcel<URL> {
+                    DispatchQueue.main.async {
+                        complete(parcel.content)
                     }
-                })
+                }
             }
         }
     }

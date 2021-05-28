@@ -54,10 +54,18 @@ class QRCodeScenario: Actor {
     private func _beScanQrCode(
         image: UIImage,_ complete:@escaping ([String]) -> Void) {
         ToolMan().beDecodeQrCode(sender: self, image: image) { messages in
-            let qrURL = URL(string: messages.first ?? "")!
-            if UIApplication.shared.canOpenURL(qrURL) {
+            let qrURL = URL(string: messages.first ?? "Nothing")!
+            qrURL.isReachable { reachable in
+                if reachable {
+                    Courier().beApplyExpress(
+                        sender: self,
+                        recipient: "WebViewScenario", content: qrURL, nil)
+                    return
+                }
                 DispatchQueue.main.async {
-                    UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
+                    if UIApplication.shared.canOpenURL(qrURL) {
+                        UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
+                    }
                 }
             }
             DispatchQueue.main.async {

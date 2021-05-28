@@ -24,7 +24,8 @@ class AdvertiserScenario: Actor {
         super.init()
         if let storedJson =
             UserDefaults.standard.object(forKey: "visitor_info") as? String {
-            visitor = storedJson.toEntity(to: VisitorInfo.self) ?? VisitorInfo()
+            visitor =
+                storedJson.toEntity(to: VisitorInfo.self) ?? VisitorInfo()
         }
         beAdvertiser()
     }
