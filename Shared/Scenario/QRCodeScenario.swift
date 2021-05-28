@@ -54,6 +54,12 @@ class QRCodeScenario: Actor {
     private func _beScanQrCode(
         image: UIImage,_ complete:@escaping ([String]) -> Void) {
         ToolMan().beDecodeQrCode(sender: self, image: image) { messages in
+            let qrURL = URL(string: messages.first ?? "")!
+            if UIApplication.shared.canOpenURL(qrURL) {
+                DispatchQueue.main.async {
+                    UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
+                }
+            }
             DispatchQueue.main.async {
                 complete(messages)
             }
