@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  Enrollment
+
+  Created by YuCheng on 2021/5/30.
+  
+*/
+"code" = "代碼";
+/* E ------------------------------*/
+"edit" = "編輯";
+"empty_web_form" = "尚未取得店家登記表格網址";
+"empty_qrcode_message" = "QRCode未含任何訊息";
+/* F ------------------------------*/
+"fill_info_description" = "填寫資料僅供快速填表用，App不會取用或散佈您的個資";
+"form_url" = "表格網址";
+/* G ------------------------------*/
+"get_visited_unit_info" = "取得受訪單位資訊";
+"go_to_fill_in" = "前往填寫";
+/* I ------------------------------*/
+"i_am_a_visitor" = "我是訪客";
+"i_am_visited_unit" = "我是受訪單位";
+"information" = "資訊";
+/* N ------------------------------*/
+"name" = "名稱";
+/* O ------------------------------*/
+"other_info" = "其他資訊";
+/* P ------------------------------*/
+"place_code" = "場所代碼";
+"please_enter_your_phone_number" = "請輸入您的電話";
+"please_fill_in_what_you_want_to_pre-fill" = "請填入其他想預填訊息";
+"please_input_form_url" = "請輸入表格網址";
+"please_input_place_code" = "請輸入場所代碼";
+"please_input_unit_name" = "請輸入場所名稱";
+"please_input_your_name" = "請輸入您的姓名";
+/* R ------------------------------*/
+"role_changed_description" = "角色變更於重新啟動App後可重新選擇";
+"role_changed" = "角色已變更";
+/* S ------------------------------*/
+"save" = "儲存";
+"scanning" = "掃名中";
+"select_qrcode_image" = "選取QRCode圖片";
+"send_info" = "發送資訊";
+"switch_role" = "變換角色";
+/* T ------------------------------*/
+"tel" = "電話";
+/* W ------------------------------*/
+"wait_for_qrcode" = "等待取得QRCode";
+"web" = "網頁";

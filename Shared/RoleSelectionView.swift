@@ -20,7 +20,8 @@ struct RoleSelectionView: View {
                         active = false
                     }
                 }, label: {
-                    Text("我是訪客").foregroundColor(golden(1.0))
+                    Text(localized("i_am_a_visitor"))
+                        .foregroundColor(golden(1.0))
                 })
                 Divider().frame(height: 30).hidden()
                 Button(action: {
@@ -28,7 +29,7 @@ struct RoleSelectionView: View {
                         active = false
                     }
                 }, label: {
-                    Text("我是受訪單位").foregroundColor(golden(1.0))
+                    Text(localized("i_am_visited_unit")).foregroundColor(golden(1.0))
                 })
             }
         }.navigationBarHidden(true)

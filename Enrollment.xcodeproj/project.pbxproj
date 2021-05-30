@@ -85,6 +85,10 @@
 		AFCDEF1C265124EB00DAC1E4 /* Flynn in Frameworks */ = {isa = PBXBuildFile; productRef = AFCDEF1B265124EB00DAC1E4 /* Flynn */; };
 		AFCDEF22265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
 		AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDEF21265131FC00DAC1E4 /* Courier.swift */; };
+		AFE60EB626637D24000A9007 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFE60EB926637D24000A9007 /* Localizable.strings */; };
+		AFE60EB726637D24000A9007 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFE60EB926637D24000A9007 /* Localizable.strings */; };
+		AFE60EBC26638343000A9007 /* LittleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE60EBB26638343000A9007 /* LittleKit.swift */; };
+		AFE60EBD26638343000A9007 /* LittleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE60EBB26638343000A9007 /* LittleKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +140,9 @@
 		AFCDEF0A2651248D00DAC1E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFCDEF0B2651248D00DAC1E4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		AFCDEF21265131FC00DAC1E4 /* Courier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Courier.swift; sourceTree = "<group>"; };
+		AFE60EB826637D24000A9007 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AFE60EBA26637D28000A9007 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AFE60EBB26638343000A9007 /* LittleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +172,7 @@
 				AF54662C26577B56006DE4AB /* Entities.swift */,
 				AF98720A265A4C51001209FA /* NewColors.swift */,
 				AF183837265F9B6300307E26 /* SingletonStorage.swift */,
+				AFE60EBB26638343000A9007 /* LittleKit.swift */,
 			);
 			path = Props;
 			sourceTree = "<group>";
@@ -282,6 +290,7 @@
 				AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */,
 				AFCDEEFA2651248B00DAC1E4 /* ContentView.swift */,
 				AFCDEEFB2651248D00DAC1E4 /* Assets.xcassets */,
+				AFE60EB926637D24000A9007 /* Localizable.strings */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = AFCDEEF32651248B00DAC1E4;
 			packageReferences = (
@@ -443,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCDEF102651248D00DAC1E4 /* Assets.xcassets in Resources */,
+				AFE60EB626637D24000A9007 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCDEF112651248D00DAC1E4 /* Assets.xcassets in Resources */,
+				AFE60EB726637D24000A9007 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +496,7 @@
 				39AD1CC9265276DE002DCA0A /* DataConverter.swift in Sources */,
 				AF54665726581533006DE4AB /* TextFieldClearButton.swift in Sources */,
 				AF18382F265F861700307E26 /* QRCodeScenario.swift in Sources */,
+				AFE60EBC26638343000A9007 /* LittleKit.swift in Sources */,
 				AF72CE1326563BDE0028C16B /* PeerAdvertiser.swift in Sources */,
 				AF5466692658CC07006DE4AB /* SwiftUIWebView.swift in Sources */,
 				AF54664E2657AFAE006DE4AB /* UIActions.swift in Sources */,
@@ -515,6 +528,7 @@
 				AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */,
 				AF183836265F96CA00307E26 /* ReduxActor.swift in Sources */,
 				AF5466492657AAD5006DE4AB /* AppState.swift in Sources */,
+				AFE60EBD26638343000A9007 /* LittleKit.swift in Sources */,
 				AF72CDFF26552BE30028C16B /* BeaconBroadcaster.swift in Sources */,
 				AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */,
 				AF54662E26577B56006DE4AB /* Entities.swift in Sources */,
@@ -546,6 +560,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AFE60EB926637D24000A9007 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFE60EB826637D24000A9007 /* en */,
+				AFE60EBA26637D28000A9007 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AFCDEF122651248D00DAC1E4 /* Debug */ = {
@@ -664,8 +690,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = M34XUV83ZD;
 				ENABLE_PREVIEWS = YES;
@@ -678,7 +704,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
-				PROVISIONING_PROFILE_SPECIFIER = toon.town.party.visitor.enrollment;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -690,8 +716,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = M34XUV83ZD;
 				ENABLE_PREVIEWS = YES;
@@ -704,7 +730,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
-				PROVISIONING_PROFILE_SPECIFIER = toon.town.party.visitor.enrollment;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

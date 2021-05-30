@@ -12,9 +12,9 @@ struct iOSAdvertiserView: View {
     
     @State private var dataSource: [ListInputItem] = []
     @State private var formDatoSource: [ListInputItem] = []
-    @State private var buttonTitle: String = "編輯"
+    @State private var buttonTitle: String = localized("edit")
     @State private var toggleSwitchOn = false
-    @State private var roleBtnTitle = "變換角色"
+    @State private var roleBtnTitle = localized("switch_role")
     
     var body: some View {
         VStack {
@@ -23,16 +23,16 @@ struct iOSAdvertiserView: View {
             List(dataSource.indexed(), id: \.1.self) { (idx, content) in
                 getListView(idx: idx)
             }
-            Text("填寫資料僅供快速填表用，App不會取用或散佈您的個資")
+            Text(localized("fill_info_description"))
                 .font(.system(size: 12.0)).foregroundColor(pistachioGreen(1.0))
             Spacer().frame(height: autoUISize(60.0))
             Button(action: {
                 scenario.beGetDataSource { source in
-                    if buttonTitle == "儲存" {
+                    if buttonTitle == localized("save") {
                         scenario.beSaveVisitor()
-                        buttonTitle = "編輯"
+                        buttonTitle = localized("edit")
                     } else {
-                        buttonTitle = "儲存"
+                        buttonTitle = localized("save")
                     }
                     dataSource = source
                 }
@@ -46,7 +46,8 @@ struct iOSAdvertiserView: View {
                 HStack {
                     Spacer().frame(width: 10.0)
                     Toggle(isOn: $toggleSwitchOn, label: {
-                        Text("取得店家資訊").foregroundColor(golden(1.0))
+                        Text(localized("get_visited_unit_info"))
+                            .foregroundColor(golden(1.0))
                     }).onChange(of: toggleSwitchOn) { isOn in
                         if isOn {
                             scenario.beStart()
@@ -61,13 +62,13 @@ struct iOSAdvertiserView: View {
                 }
                 Button(action: {
                     scenario.beChangeRole(enable: true) { _ in
-                        roleBtnTitle = "角色已變更"
+                        roleBtnTitle = localized("role_changed")
                     }
                 }, label: {
                     Text(roleBtnTitle).foregroundColor(flameScarlet(1.0))
                 })
                 Spacer()
-                Text("角色變更於重新啟動App後選擇")
+                Text(localized("role_changed_description"))
                     .foregroundColor(pistachioGreen(1.0))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 14.0))
@@ -88,9 +89,9 @@ struct iOSAdvertiserView: View {
             }
             scenario.beChangeRole(enable: false) { role in
                 if role.isEmpty {
-                    roleBtnTitle = "角色已變更"
+                    roleBtnTitle = localized("role_changed")
                 } else {
-                    roleBtnTitle = "變更角色"
+                    roleBtnTitle = localized("switch_role")
                 }
             }
         }
@@ -101,7 +102,7 @@ struct iOSAdvertiserView: View {
     }
     // MARK: - private methods
     private func getListView(idx: Int) -> AnyView {
-        if buttonTitle == "儲存" {
+        if buttonTitle == localized("save") {
             let inputView =
                 iOSListInputView(index: idx, item: .constant(dataSource[idx]))
             return AnyView(inputView)

@@ -46,20 +46,20 @@ class AdvertiserScenario: Actor {
         _ complete:@escaping ([ListInputItem]) -> Void) {
         let source = [
             ListInputItem(
-                title: "名稱：",
-                placeholder: "請輸入您的姓名",
+                title: "\(localized("name"))：",
+                placeholder: localized("please_input_your_name"),
                 keyboardType: .namePhonePad,
                 content: visitor.name
             ),
             ListInputItem(
-                title: "電話：",
-                placeholder: "請輸入您的電話",
+                title: "\(localized("tel"))：",
+                placeholder: localized("please_enter_your_phone_number"),
                 keyboardType: .phonePad,
                 content: visitor.tel
             ),
             ListInputItem(
-                title: "其他資訊：",
-                placeholder: "請填入其他想預填訊息",
+                title: "\(localized("other_info"))：",
+                placeholder: localized("please_fill_in_what_you_want_to_pre-fill"),
                 content: visitor.others
             )
         ]
@@ -131,19 +131,19 @@ class AdvertiserScenario: Actor {
     private func converToFormDatoSources(content: VisitedUnit) -> [ListInputItem] {
         return [
             ListInputItem(
-                title: "店家代碼：",
-                placeholder: "請輸入店家代號",
+                title: "\(localized("place_code"))：",
+                placeholder: localized("please_input_place_code"),
                 keyboardType: .asciiCapable,
                 content: content.code
             ),
             ListInputItem(
-                title: "店家名稱：",
-                placeholder: "請輸店家名稱",
+                title: "\(localized("name"))：",
+                placeholder: localized("please_input_unit_name"),
                 content: content.name
             ),
             ListInputItem(
-                title: "表格網址：",
-                placeholder: "請輸入表格所在網址",
+                title: "\(localized("form_url"))：",
+                placeholder: localized("please_input_form_url"),
                 keyboardType: .URL,
                 content: content.cloudForm
             )

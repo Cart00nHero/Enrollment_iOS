@@ -11,7 +11,7 @@ fileprivate let scenario: QRCodeScenario = QRCodeScenario()
 struct iOSQRCodeView: View {
     @State private var presentPhotoLibrary = false
     @State private var selectedImage: UIImage = UIImage()
-    @State private var qrMessage = "等待取得QRCode"
+    @State private var qrMessage = localized("wait_for_qrcode")
     @State private var copyText: String = "Copy"
     var body: some View {
         VStack {
@@ -26,9 +26,10 @@ struct iOSQRCodeView: View {
             if SingletonStorage.shared.currentRole == "Visitor" {
                 scenario.beSubscribeQRCode { image in
                     selectedImage = image
-                    qrMessage = "掃描中..."
+                    qrMessage = "\(localized("scanning"))..."
                     scenario.beScanQrCode(image: selectedImage) { qrMsgs in
-                        qrMessage = qrMsgs.first ?? "No message here!!"
+                        qrMessage =
+                            qrMsgs.first ?? localized("\(localized("empty_qrcode_message"))!!!")
                     }
                 }
             }
@@ -50,7 +51,7 @@ struct iOSQRCodeView: View {
                     Text(qrMessage).foregroundColor(golden(1.0))
                     Spacer()
                     Button {
-                        if qrMessage != "等待取得QRCode" {
+                        if qrMessage != localized("wait_for_qrcode") {
                             UIPasteboard.general.string = qrMessage
                             copyText = "Copied"
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -71,7 +72,7 @@ struct iOSQRCodeView: View {
             Button {
                 presentPhotoLibrary = true
             } label: {
-                Text("選取QRCode圖片")
+                Text(localized("select_qrcode_image"))
                     .foregroundColor(flameScarlet(1.0))
             }
         )
