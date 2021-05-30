@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  Enrollment
+
+  Created by YuCheng on 2021/5/30.
+  
+*/
+"code" = "Code";
+/* E ------------------------------*/
+"edit" = "Edit";
+"empty_web_form" = "Dindn't obtain web form url";
+"empty_qrcode_message" = "Not found QRCode messages";
+/* F ------------------------------*/
+"fill_info_description" = "Fill in the information only for quick form filling,App will not access or distribute your personal information";
+"form_url" = "Form url";
+/* G ------------------------------*/
+"get_visited_unit_info" = "Get visited unit information";
+"go_to_fill_in" = "Go to fill in";
+/* I ------------------------------*/
+"i_am_a_visitor" = "I'm a visitor";
+"i_am_visited_unit" = "I'm a visited unit";
+"information" = "Information";
+/* N ------------------------------*/
+"name" = "Name";
+/* O ------------------------------*/
+"other_info" = "Other info";
+/* P ------------------------------*/
+"place_code" = "Place code";
+"please_enter_your_phone_number" = "Please enter your phone number";
+"please_fill_in_what_you_want_to_pre-fill" = "Please fill in what you want to pre-fill";
+"please_input_form_url" = "Please input form url";
+"please_input_place_code" = "Please input place code";
+"please_input_unit_name" = "please input unit name";
+"please_input_your_name" = "Please input your name";
+/* R ------------------------------*/
+"role_changed_description" = "Could re-select roles after re-launching App";
+"role_changed" = "Role changed";
+/* S ------------------------------*/
+"save" = "save";
+"scanning" = "Scanning";
+"select_qrcode_image" = "Please select a QRCode image";
+"send_info" = "Send information";
+"switch_role" = "Switch role";
+/* T ------------------------------*/
+"tel" = "Tel";
+/* W ------------------------------*/
+"wait_for_qrcode" = "Wait for QRCode";
+"web" = "Web";
+

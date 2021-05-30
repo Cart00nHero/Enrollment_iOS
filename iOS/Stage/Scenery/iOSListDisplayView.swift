@@ -24,7 +24,7 @@ struct iOSListDisplayView: View {
                 .foregroundColor(golden(1.0))
             Spacer()
             Button {
-                if item.title.contains("表格網址：") {
+                if item.title.contains(localized("form_url")) {
                     appStore.dispatch(
                         OpenFormURLAction(urlString: item.content))
                 } else {
@@ -48,9 +48,9 @@ struct iOSListDisplayView: View {
         }
     }
     private func getItemContent(_ item: ListInputItem) {
-        if item.title.contains("表格網址：") {
+        if item.title.contains(localized("form_url")) {
             buttonTitle = "Go"
-            contentValue = "Go前往填寫"
+            contentValue = localized("go_to_fill_in")
         } else {
             contentValue = item.content
         }

@@ -14,12 +14,12 @@ struct iOSVisitorTabView: View {
         TabPageItem(
             pageView: AnyView(iOSAdvertiserView()),
             tabImage: Image(systemName: "doc.text.magnifyingglass"),
-            title: "資料"
+            title: localized("information")
         ),
         TabPageItem(
             pageView: AnyView(iOSWebView()),
             tabImage: Image(systemName: "network"),
-            title: "網頁"
+            title: localized("web")
         ),
         TabPageItem(
             pageView: AnyView(iOSQRCodeView()),

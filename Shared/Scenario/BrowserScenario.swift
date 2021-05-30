@@ -66,19 +66,19 @@ class BrowserScenario: Actor {
         _ complete:@escaping ([ListInputItem]) -> Void) {
         let source = [
             ListInputItem(
-                title: "代碼：",
-                placeholder: "請輸入地點代號",
+                title: "\(localized("code"))：",
+                placeholder: localized("please_input_place_code"),
                 keyboardType: .asciiCapable,
                 content: visitedUnit.code
             ),
             ListInputItem(
-                title: "名稱：",
-                placeholder: "請輸受訪單位名稱",
+                title: "\(localized("name"))：",
+                placeholder: localized("please_input_unit_name"),
                 content: visitedUnit.name
             ),
             ListInputItem(
-                title: "表格網址：",
-                placeholder: "請輸入雲端表格所在網址：",
+                title: "\(localized("form_url"))：",
+                placeholder: localized("please_input_form_url"),
                 keyboardType: .URL,
                 content: visitedUnit.cloudForm
             )

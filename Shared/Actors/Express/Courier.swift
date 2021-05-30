@@ -22,8 +22,7 @@ fileprivate class LogisticsCenter: NSObject {
         if warehouse[recipient] == nil {
             parcelSet = NSMutableSet()
         } else {
-            parcelSet =
-                warehouse[recipient]?.copy() as! NSMutableSet
+            parcelSet = NSMutableSet(set: warehouse[recipient]!)
         }
         if !parcelSet.contains(parcel) {
             parcelSet.add(parcel)

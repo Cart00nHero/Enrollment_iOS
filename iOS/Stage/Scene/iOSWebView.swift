@@ -24,7 +24,7 @@ struct iOSWebView: View {
     private func getDisplayView() -> AnyView {
         if webUrl.absoluteString == "empty" {
             return AnyView(
-                Text("尚未取得店家登記表格網址")
+                Text(localized("empty_web_form"))
                     .multilineTextAlignment(.center)
                     .font(.system(size: 24.0))
                     .foregroundColor(golden(1.0))
