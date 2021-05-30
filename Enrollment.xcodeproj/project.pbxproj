@@ -366,7 +366,6 @@
 				AFCDEEFC2651248D00DAC1E4 /* Sources */,
 				AFCDEEFD2651248D00DAC1E4 /* Frameworks */,
 				AFCDEEFE2651248D00DAC1E4 /* Resources */,
-				AF72CE2626567AF90028C16B /* FlynnLint */,
 			);
 			buildRules = (
 			);
@@ -456,27 +455,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AF72CE2626567AF90028C16B /* FlynnLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = FlynnLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AFCDEEFC2651248D00DAC1E4 /* Sources */ = {
