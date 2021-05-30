@@ -14,7 +14,7 @@ struct iOSUnitTabView: View {
         TabPageItem(
             pageView: AnyView(iOSBrowserView()),
             tabImage: Image(systemName: "doc.text.magnifyingglass"),
-            title: "資料"
+            title: localized("information")
         ),
         TabPageItem(
             pageView: AnyView(iOSQRCodeView()),

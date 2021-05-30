@@ -10,9 +10,10 @@ import SwiftUI
 struct iOSBrowserView: View {
     private let scenario = BrowserScenario()
     @State private var dataSource: [ListInputItem] = []
-    @State private var buttonTitle: String = "編輯"
+    @State private var buttonTitle: String = NSLocalizedString("edit", comment: "編輯")
     @State private var toggleSwitchOn = false
-    @State private var roleBtnTitle = "變換角色"
+    @State private var roleBtnTitle =
+        NSLocalizedString("switch_role", comment: "變換角色")
     
     var body: some View {
         VStack {
@@ -20,7 +21,7 @@ struct iOSBrowserView: View {
             HStack {
                 Spacer().frame(width: 10.0)
                 Toggle(isOn: $toggleSwitchOn, label: {
-                    Text("發送資訊").foregroundColor(golden(1.0))
+                    Text(localized("send_info")).foregroundColor(golden(1.0))
                 }).onChange(of: toggleSwitchOn) { isOn in
                     if isOn {
                         scenario.beStart()
@@ -36,13 +37,13 @@ struct iOSBrowserView: View {
             }
             Button(action: {
                 scenario.beGetDataSource { source in
-                    if buttonTitle == "儲存" {
+                    if buttonTitle == localized("save") {
                         scenario.beSaveUnit()
-                        buttonTitle = "編輯"
+                        buttonTitle = localized("edit")
                         toggleSwitchOn = true
                     } else {
                         toggleSwitchOn = false
-                        buttonTitle = "儲存"
+                        buttonTitle = localized("save")
                     }
                     dataSource = source
                 }
@@ -52,13 +53,13 @@ struct iOSBrowserView: View {
             Spacer().frame(height: UIScreen.main.bounds.height/3.0)
             Button(action: {
                 scenario.beChangeRole(enable: true) { _ in
-                    roleBtnTitle = "角色已變更"
+                    roleBtnTitle = localized("role_changed")
                 }
             }, label: {
                 Text(roleBtnTitle).foregroundColor(flameScarlet(1.0))
             })
             Spacer()
-            Text("角色變更於重新啟動App後選擇")
+            Text(localized("role_changed_description"))
                 .foregroundColor(pistachioGreen(1.0))
                 .multilineTextAlignment(.center)
                 .font(.system(size: 14.0))
@@ -73,9 +74,9 @@ struct iOSBrowserView: View {
             }
             scenario.beChangeRole(enable: false) { role in
                 if role.isEmpty {
-                    roleBtnTitle = "角色已變更"
+                    roleBtnTitle = localized("role_changed")
                 } else {
-                    roleBtnTitle = "變更角色"
+                    roleBtnTitle = localized("switch_role")
                 }
             }
         }
@@ -86,7 +87,7 @@ struct iOSBrowserView: View {
     
     // MARK: - private methods
     private func getListView(idx: Int) -> AnyView {
-        if buttonTitle == "儲存" {
+        if buttonTitle == localized("save") {
             let inputView =
                 iOSListInputView(index: idx, item: .constant(dataSource[idx]))
             return AnyView(inputView)

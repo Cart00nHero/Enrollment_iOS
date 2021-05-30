@@ -110,8 +110,13 @@ class ToolMan: Actor {
         let tempText = smsText
         if tempText.lowercased().hasPrefix("smsto") {
             let splitArray = smsText.split(separator: ":")
-            if splitArray.count == 3 {
-                let sendSMSText = "sms:+\(splitArray[1])&body=\(splitArray[2])"
+            if splitArray.count >= 3 {
+                let sliceArr = splitArray[2 ..< splitArray.count]
+                let bodyText = NSMutableString()
+                for text in sliceArr {
+                    bodyText.append(String(text))
+                }
+                let sendSMSText = "sms:\(splitArray[1])&body=\(bodyText)"
                 sender.unsafeSend {
                     complete(true,sendSMSText)
                 }
