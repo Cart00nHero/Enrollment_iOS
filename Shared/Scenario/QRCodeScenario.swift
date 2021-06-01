@@ -59,14 +59,6 @@ class QRCodeScenario: Actor {
                     if let encodedString =
                         smsText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
                         let qrURL = URL(string: encodedString)!
-                        if success {
-                            DispatchQueue.main.async {
-                                if UIApplication.shared.canOpenURL(qrURL) {
-                                    UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
-                                }
-                            }
-                            return
-                        }
                         qrURL.isReachable { reachable in
                             if reachable {
                                 Courier().beApplyExpress(
@@ -74,6 +66,11 @@ class QRCodeScenario: Actor {
                                     appStore.dispatch(SwitchTabAction(tabIndex: 1))
                                 }
                                 return
+                            }
+                            DispatchQueue.main.async {
+                                if UIApplication.shared.canOpenURL(qrURL) {
+                                    UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
+                                }
                             }
                         }
                         DispatchQueue.main.async {
@@ -118,7 +115,7 @@ class QRCodeScenario: Actor {
 // Contents of file after this marker will be overwritten as needed
 
 extension QRCodeScenario {
-
+    
     @discardableResult
     public func beSubscribeQRCode(_ complate: @escaping(UIImage) -> Void) -> Self {
         unsafeSend { self._beSubscribeQRCode(complate) }
@@ -149,5 +146,5 @@ extension QRCodeScenario {
         unsafeSend(_beUnSubscribe)
         return self
     }
-
+    
 }
