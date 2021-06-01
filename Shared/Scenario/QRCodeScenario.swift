@@ -54,30 +54,31 @@ class QRCodeScenario: Actor {
     private func _beScanQrCode(
         image: UIImage,_ complete:@escaping ([String]) -> Void) {
         ToolMan().beDecodeQrCode(sender: self, image: image) { messages in
-            let messageTest: String = messages.first ?? ""
-            ToolMan().beConvertQRSMS(sender: self, smsText: messageTest) { success, smsText in
-                if let encodedString =
-                    smsText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-                    let qrURL = URL(string: encodedString)!
-                    if success {
-                        DispatchQueue.main.async {
-                            if UIApplication.shared.canOpenURL(qrURL) {
-                                UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
-                            }
-                        }
-                        return
-                    }
-                    qrURL.isReachable { reachable in
-                        if reachable {
-                            Courier().beApplyExpress(
-                                sender: self, recipient: "WebViewScenario", content: qrURL) { _ in
-                                appStore.dispatch(SwitchTabAction(tabIndex: 1))
+            for message in messages {
+                ToolMan().beConvertQRSMS(sender: self, smsText: message) { success, smsText in
+                    if let encodedString =
+                        smsText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                        let qrURL = URL(string: encodedString)!
+                        if success {
+                            DispatchQueue.main.async {
+                                if UIApplication.shared.canOpenURL(qrURL) {
+                                    UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
+                                }
                             }
                             return
                         }
-                    }
-                    DispatchQueue.main.async {
-                        complete(messages)
+                        qrURL.isReachable { reachable in
+                            if reachable {
+                                Courier().beApplyExpress(
+                                    sender: self, recipient: "WebViewScenario", content: qrURL) { _ in
+                                    appStore.dispatch(SwitchTabAction(tabIndex: 1))
+                                }
+                                return
+                            }
+                        }
+                        DispatchQueue.main.async {
+                            complete(messages)
+                        }
                     }
                 }
             }
