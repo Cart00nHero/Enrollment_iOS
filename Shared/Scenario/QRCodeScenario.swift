@@ -53,28 +53,37 @@ class QRCodeScenario: Actor {
     
     private func _beScanQrCode(
         image: UIImage,_ complete:@escaping ([String]) -> Void) {
-        ToolMan().beDecodeQrCode(sender: self, image: image) { messages in
+        QRCodeScanner().beDecodeQrCode(sender: self, image: image) { messages in
             for message in messages {
-                ToolMan().beConvertQRSMS(sender: self, smsText: message) { success, smsText in
-                    if let encodedString =
-                        smsText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
-                        let qrURL = URL(string: encodedString)!
-                        qrURL.isReachable { reachable in
-                            if reachable {
-                                Courier().beApplyExpress(
-                                    sender: self, recipient: "WebViewScenario", content: qrURL) { _ in
-                                    appStore.dispatch(SwitchTabAction(tabIndex: 1))
-                                }
-                                return
-                            }
-                            DispatchQueue.main.async {
-                                if UIApplication.shared.canOpenURL(qrURL) {
-                                    UIApplication.shared.open(qrURL, options: [:], completionHandler: nil)
-                                }
-                            }
+                let encodedMsg =
+                    message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+                let webURL = URL(string: encodedMsg)!
+                webURL.isReachable { reachable in
+                    if reachable {
+                        Courier().beApplyExpress(
+                            sender: self, recipient: "WebViewScenario", content: webURL) { _ in
+                            appStore.dispatch(SwitchTabAction(tabIndex: 1))
                         }
-                        DispatchQueue.main.async {
-                            complete(messages)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        if UIApplication.shared.canOpenURL(webURL) {
+                            UIApplication.shared.open(webURL, options: [:], completionHandler: nil)
+                        }
+                    }
+                }
+                
+                QRCodeScanner().beConvertQRSMS(
+                    sender: self, smsText: message) { success, smsText in
+                    if success {
+                        if let encodedString =
+                            smsText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                            let smsURL = URL(string: encodedString)!
+                            DispatchQueue.main.async {
+                                if UIApplication.shared.canOpenURL(smsURL) {
+                                    UIApplication.shared.open(smsURL, options: [:], completionHandler: nil)
+                                }
+                            }
                         }
                     }
                 }
@@ -115,7 +124,7 @@ class QRCodeScenario: Actor {
 // Contents of file after this marker will be overwritten as needed
 
 extension QRCodeScenario {
-    
+
     @discardableResult
     public func beSubscribeQRCode(_ complate: @escaping(UIImage) -> Void) -> Self {
         unsafeSend { self._beSubscribeQRCode(complate) }
@@ -146,5 +155,5 @@ extension QRCodeScenario {
         unsafeSend(_beUnSubscribe)
         return self
     }
-    
+
 }

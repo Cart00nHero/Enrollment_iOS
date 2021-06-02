@@ -73,6 +73,8 @@
 		AF72CE32265760C90028C16B /* RoleSelectionScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */; };
 		AF72CE34265767770028C16B /* StartAppScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE33265767770028C16B /* StartAppScenario.swift */; };
 		AF72CE35265767770028C16B /* StartAppScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF72CE33265767770028C16B /* StartAppScenario.swift */; };
+		AF90B0132667287F0089E61F /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90B0122667287F0089E61F /* QRCodeScanner.swift */; };
+		AF90B0142667287F0089E61F /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF90B0122667287F0089E61F /* QRCodeScanner.swift */; };
 		AF98720B265A4C51001209FA /* NewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98720A265A4C51001209FA /* NewColors.swift */; };
 		AF98720C265A4C51001209FA /* NewColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98720A265A4C51001209FA /* NewColors.swift */; };
 		AFC97C7C265F6BE500D1980D /* DynamicTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC97C7B265F6BE500D1980D /* DynamicTabView.swift */; };
@@ -129,6 +131,7 @@
 		AF72CE2A26575FB80028C16B /* RoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionView.swift; sourceTree = "<group>"; };
 		AF72CE30265760C90028C16B /* RoleSelectionScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionScenario.swift; sourceTree = "<group>"; };
 		AF72CE33265767770028C16B /* StartAppScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppScenario.swift; sourceTree = "<group>"; };
+		AF90B0122667287F0089E61F /* QRCodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
 		AF98720A265A4C51001209FA /* NewColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewColors.swift; sourceTree = "<group>"; };
 		AFC97C7B265F6BE500D1980D /* DynamicTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTabView.swift; sourceTree = "<group>"; };
 		AFCDEEF92651248B00DAC1E4 /* EnrollmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentApp.swift; sourceTree = "<group>"; };
@@ -353,6 +356,7 @@
 				AFCDEF20265131FC00DAC1E4 /* Express */,
 				39AD1CC8265276DE002DCA0A /* DataConverter.swift */,
 				AF183834265F96CA00307E26 /* ReduxActor.swift */,
+				AF90B0122667287F0089E61F /* QRCodeScanner.swift */,
 			);
 			path = Actors;
 			sourceTree = "<group>";
@@ -375,6 +379,7 @@
 				AFCDEEFC2651248D00DAC1E4 /* Sources */,
 				AFCDEEFD2651248D00DAC1E4 /* Frameworks */,
 				AFCDEEFE2651248D00DAC1E4 /* Resources */,
+				AF90B015266729820089E61F /* FlynnLint */,
 			);
 			buildRules = (
 			);
@@ -468,6 +473,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF90B015266729820089E61F /* FlynnLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = FlynnLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFCDEEFC2651248D00DAC1E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -511,6 +537,7 @@
 				AF5466612658C538006DE4AB /* WebViewScenario.swift in Sources */,
 				AF183832265F936F00307E26 /* AppActions.swift in Sources */,
 				AF5466662658CAFD006DE4AB /* TabPageView.swift in Sources */,
+				AF90B0132667287F0089E61F /* QRCodeScanner.swift in Sources */,
 				AF0A296126591A10008F4E3A /* TabActionScenario.swift in Sources */,
 				AF72CE0F26563BDE0028C16B /* PeerHost.swift in Sources */,
 				AF183835265F96CA00307E26 /* ReduxActor.swift in Sources */,
@@ -523,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF90B0142667287F0089E61F /* QRCodeScanner.swift in Sources */,
 				AF72CE23265670EC0028C16B /* BrowserScenario.swift in Sources */,
 				AF54663526578F10006DE4AB /* iOSListInputView.swift in Sources */,
 				AF3A99B9265E9D60006F7CF7 /* ToolMan.swift in Sources */,
@@ -701,7 +729,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -727,7 +755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = toon.town.party.visitor.enrollment;
 				PRODUCT_NAME = Enrollment;
 				PROVISIONING_PROFILE_SPECIFIER = "";
