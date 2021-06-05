@@ -36,7 +36,7 @@
 "role_changed_description" = "Could re-select roles after re-launching App";
 "role_changed" = "Role changed";
 /* S ------------------------------*/
-"save" = "save";
+"save" = "Save";
 "scanning" = "Scanning";
 "select_qrcode_image" = "Please select a QRCode image";
 "send_info" = "Send information";
