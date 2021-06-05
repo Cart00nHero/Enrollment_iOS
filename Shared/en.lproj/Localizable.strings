@@ -23,7 +23,7 @@
 /* N ------------------------------*/
 "name" = "Name";
 /* O ------------------------------*/
-"other_info" = "Other info";
+"info" = "Info";
 /* P ------------------------------*/
 "place_code" = "Place code";
 "please_enter_your_phone_number" = "Please enter your phone number";

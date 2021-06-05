@@ -58,7 +58,7 @@ class AdvertiserScenario: Actor {
                 content: visitor.tel
             ),
             ListInputItem(
-                title: "\(localized("other_info"))：",
+                title: "\(localized("info"))：",
                 placeholder: localized("please_fill_in_what_you_want_to_pre-fill"),
                 content: visitor.others
             )

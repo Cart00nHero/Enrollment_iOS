@@ -13,7 +13,7 @@ struct iOSListDisplayView: View {
     @State private var buttonTitle: String = "Copy"
     @State private var contentValue: String = ""
     @State private var textColor: Color = flameScarlet(1.0)
-    @State private var fontSize:CGFloat = 16.0
+    @State private var fontSize:CGFloat = 14.0
     var body: some View {
         HStack {
             Text(item.title)
