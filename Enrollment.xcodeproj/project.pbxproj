@@ -22,8 +22,8 @@
 		AF183833265F936F00307E26 /* AppActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183831265F936F00307E26 /* AppActions.swift */; };
 		AF183835265F96CA00307E26 /* ReduxActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183834265F96CA00307E26 /* ReduxActor.swift */; };
 		AF183836265F96CA00307E26 /* ReduxActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183834265F96CA00307E26 /* ReduxActor.swift */; };
-		AF183838265F9B6300307E26 /* SingletonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* SingletonStorage.swift */; };
-		AF183839265F9B6300307E26 /* SingletonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* SingletonStorage.swift */; };
+		AF183838265F9B6300307E26 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* Singleton.swift */; };
+		AF183839265F9B6300307E26 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF183837265F9B6300307E26 /* Singleton.swift */; };
 		AF18383B265FA58000307E26 /* iOSUnitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18383A265FA58000307E26 /* iOSUnitTabView.swift */; };
 		AF18383D265FA68800307E26 /* iOSVisitorTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18383C265FA68800307E26 /* iOSVisitorTabView.swift */; };
 		AF3A99AF265E9582006F7CF7 /* SwiftUIPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */; };
@@ -102,7 +102,7 @@
 		AF18382E265F861700307E26 /* QRCodeScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScenario.swift; sourceTree = "<group>"; };
 		AF183831265F936F00307E26 /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		AF183834265F96CA00307E26 /* ReduxActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxActor.swift; sourceTree = "<group>"; };
-		AF183837265F9B6300307E26 /* SingletonStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonStorage.swift; sourceTree = "<group>"; };
+		AF183837265F9B6300307E26 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		AF18383A265FA58000307E26 /* iOSUnitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSUnitTabView.swift; sourceTree = "<group>"; };
 		AF18383C265FA68800307E26 /* iOSVisitorTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSVisitorTabView.swift; sourceTree = "<group>"; };
 		AF3A99AE265E9582006F7CF7 /* SwiftUIPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPhotoPicker.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				39AD1CBA265272BD002DCA0A /* Extension */,
 				AF54662C26577B56006DE4AB /* Entities.swift */,
 				AF98720A265A4C51001209FA /* NewColors.swift */,
-				AF183837265F9B6300307E26 /* SingletonStorage.swift */,
+				AF183837265F9B6300307E26 /* Singleton.swift */,
 				AFE60EBB26638343000A9007 /* LittleKit.swift */,
 			);
 			path = Props;
@@ -504,7 +504,7 @@
 				AFC97C7C265F6BE500D1980D /* DynamicTabView.swift in Sources */,
 				AF5466512657C06F006DE4AB /* iOSListDisplayView.swift in Sources */,
 				AFCDEF0E2651248D00DAC1E4 /* ContentView.swift in Sources */,
-				AF183838265F9B6300307E26 /* SingletonStorage.swift in Sources */,
+				AF183838265F9B6300307E26 /* Singleton.swift in Sources */,
 				AFCDEF0C2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
 				AF54664A2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AF18383D265FA68800307E26 /* iOSVisitorTabView.swift in Sources */,
@@ -577,7 +577,7 @@
 				AF98720C265A4C51001209FA /* NewColors.swift in Sources */,
 				AF54664B2657AAD5006DE4AB /* AppReducer.swift in Sources */,
 				AFCDEF0D2651248D00DAC1E4 /* EnrollmentApp.swift in Sources */,
-				AF183839265F9B6300307E26 /* SingletonStorage.swift in Sources */,
+				AF183839265F9B6300307E26 /* Singleton.swift in Sources */,
 				AF54666A2658CC07006DE4AB /* SwiftUIWebView.swift in Sources */,
 				AF54662B26577AB4006DE4AB /* BeaconReceiver.swift in Sources */,
 				AFCDEF23265131FC00DAC1E4 /* Courier.swift in Sources */,

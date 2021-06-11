@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 import UIKit
-class SingletonStorage: NSObject {
-    static let shared = SingletonStorage()
+class Singleton: NSObject {
+    static let shared = Singleton()
     var currentRole = ""
 }
+let roleStoredKey = "role_of_user"
 
 let serviceType = "visitor-record"

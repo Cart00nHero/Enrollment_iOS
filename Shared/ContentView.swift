@@ -46,7 +46,7 @@ struct ContentView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                    // Code you want to be delayed
                     scenario.beGetRoleOfUser { role in
-                        SingletonStorage.shared.currentRole = role
+                        Singleton.shared.currentRole = role
                         switch role {
                         case "Visitor":
                             self.activeVisitorUI = true

@@ -23,7 +23,7 @@ struct iOSQRCodeView: View {
         .onAppear() {
             scenario.beSubscribeRedux { newState in
             }
-            if SingletonStorage.shared.currentRole == "Visitor" {
+            if Singleton.shared.currentRole == "Visitor" {
                 scenario.beSubscribeQRCode { image in
                     selectedImage = image
                     qrMessage = "\(localized("scanning"))..."
@@ -43,7 +43,7 @@ struct iOSQRCodeView: View {
         }
     }
     private func chooseView() -> AnyView {
-        let role = SingletonStorage.shared.currentRole
+        let role = Singleton.shared.currentRole
         if role == "Visitor" {
             return AnyView(
                 HStack {

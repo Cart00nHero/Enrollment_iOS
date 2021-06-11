@@ -11,7 +11,7 @@ import Flynn
 class StartAppScenario: Actor {
     private func _beGetRoleOfUser(_ complete:@escaping (String) -> Void) {
         if let role =
-            UserDefaults.standard.object(forKey: "role_of_user") as? String {
+            UserDefaults.standard.object(forKey: roleStoredKey) as? String {
             DispatchQueue.main.async {
                 complete(role)
             }

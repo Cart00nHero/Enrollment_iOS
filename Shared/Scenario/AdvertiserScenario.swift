@@ -87,13 +87,13 @@ class AdvertiserScenario: Actor {
     private func _beChangeRole(
         enable: Bool,_ complete:@escaping (String) -> Void) {
         if enable {
-            UserDefaults.standard.removeObject(forKey: "role_of_user")
+            UserDefaults.standard.removeObject(forKey: roleStoredKey)
             DispatchQueue.main.async {
                 complete("")
             }
         } else {
             if let role =
-                UserDefaults.standard.object(forKey: "role_of_user") as? String {
+                UserDefaults.standard.object(forKey: roleStoredKey) as? String {
                 DispatchQueue.main.async {
                     complete(role)
                 }
